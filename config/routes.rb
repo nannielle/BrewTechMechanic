@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pages#home_befor_login"
+
+  get "/home_after_login" ,to: "pages#home_after_login", as: :home_after_login
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
