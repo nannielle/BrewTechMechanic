@@ -1,0 +1,8 @@
+<h1>Coffee Machines</h1>
+
+<% @coffee_machines.each do |coffee_machine| %>
+  <div>
+    <%= coffee_machine.description %>
+    <%= link_to "View Details", coffee_machine_path(coffee_machine) %>
+  </div>
+<% end %>
