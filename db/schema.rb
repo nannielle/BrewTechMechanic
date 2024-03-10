@@ -10,9 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_02_152250) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_10_173449) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coffee_machine_models", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "coffee_machines", force: :cascade do |t|
+    t.string "UniqueLoginCode"
+    t.string "serial_number"
+    t.string "machine_type"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "coffee_machine_model_id", null: false
+    t.index ["coffee_machine_model_id"], name: "index_coffee_machines_on_coffee_machine_model_id"
+    t.index ["user_id"], name: "index_coffee_machines_on_user_id"
+  end
+
+  create_table "errors", force: :cascade do |t|
+    t.text "textdescription"
+    t.string "youtubelink"
+    t.bigint "coffee_machine_model_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_machine_model_id"], name: "index_errors_on_coffee_machine_model_id"
+  end
+
+  create_table "managers", force: :cascade do |t|
+    t.string "region"
+    t.string "name"
+    t.string "phone_number"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "question_and_answers", force: :cascade do |t|
+    t.string "question"
+    t.text "answer"
+    t.bigint "coffee_machine_model_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_machine_model_id"], name: "index_question_and_answers_on_coffee_machine_model_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "question_and_answer_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_and_answer_id"], name: "index_reviews_on_question_and_answer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +82,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_152250) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coffee_machines", "coffee_machine_models"
+  add_foreign_key "coffee_machines", "users"
+  add_foreign_key "errors", "coffee_machine_models"
+  add_foreign_key "question_and_answers", "coffee_machine_models"
+  add_foreign_key "reviews", "question_and_answers"
+  add_foreign_key "reviews", "users"
 end

@@ -1,0 +1,2 @@
+class CoffeeMachineModel < ApplicationRecord
+end
