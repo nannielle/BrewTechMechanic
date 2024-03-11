@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_10_173449) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_170735) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,7 +29,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_10_173449) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "coffee_machine_model_id", null: false
+    t.bigint "manager_id"
     t.index ["coffee_machine_model_id"], name: "index_coffee_machines_on_coffee_machine_model_id"
+    t.index ["manager_id"], name: "index_coffee_machines_on_manager_id"
     t.index ["user_id"], name: "index_coffee_machines_on_user_id"
   end
 
@@ -83,6 +85,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_10_173449) do
   end
 
   add_foreign_key "coffee_machines", "coffee_machine_models"
+  add_foreign_key "coffee_machines", "managers"
   add_foreign_key "coffee_machines", "users"
   add_foreign_key "errors", "coffee_machine_models"
   add_foreign_key "question_and_answers", "coffee_machine_models"
