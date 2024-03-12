@@ -9,6 +9,24 @@
 #   end
 
 require 'faker'
+require "open-uri"
+require "yaml"
+
+puts "Creating 10 fake Users"
+
+10.times.map do
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: "securepassword",
+    address: "#{Faker::Address.street_address}",
+    city: "#{Faker::Address.city}",
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    phone_number: Faker::PhoneNumber.cell_phone
+  )
+end
 
 # Seed data for coffee_machine_models
 5.times do
