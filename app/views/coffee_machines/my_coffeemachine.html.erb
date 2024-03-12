@@ -1,0 +1,15 @@
+<h1>My Coffee Machines</h1>
+
+<% @user_coffeemachines.each do |coffeemachine| %>
+  <div>
+    <h2><%= coffeemachine.machine_type %></h2>
+    <p><%= coffeemachine.description %></p>
+    <% if coffeemachine.photo.attached? %>
+      <%= cl_image_tag coffeemachine.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+      <p>UniqueLoginCode<%= coffeemachine.UniqueLoginCode %></p>
+
+    <!-- Add more coffee machine details here -->
+  </div>
+<% end %>
+<%= link_to 'New Coffee Machine', new_coffee_machine_path, class: 'btn btn-primary' %>
