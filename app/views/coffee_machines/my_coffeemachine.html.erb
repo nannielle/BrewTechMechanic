@@ -1,0 +1,13 @@
+<h1>My Coffee Machines</h1>
+
+
+
+
+
+<% @user_coffeemachines.each do |coffeemachine| %>
+  <div>
+    <h2><%= coffeemachine.machine_type %></h2>
+    <p><%= coffeemachine.description %></p>
+    <!-- Add more coffee machine details here -->
+  </div>
+<% end %>
