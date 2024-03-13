@@ -9,8 +9,13 @@ Rails.application.routes.draw do
 
   resources :question_and_answers, only: [:index]
   resources :coffee_machines
+
   resource :profile, only: [:show, :edit, :update]
+
   get 'my_coffeemachine', to: 'coffee_machines#my_coffeemachine'
+
+  # Route to handle the form submission
+  post 'contact_manufacture', to: 'support#create', as: :manufacture_contact
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

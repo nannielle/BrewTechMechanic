@@ -17,7 +17,8 @@
               <%= link_to "Questions and Answers", question_and_answers_path, class: "nav-link nav-button-blue" %>
             </li>
             <li class="nav-item mx-2">
-              <%= link_to "Contact Manufacture", "#", class: "nav-link nav-button-orange" %>
+
+             <%= link_to "Contact Manufacture", manufacture_contact_path, class: "nav-link nav-button-orange", data: { bs_toggle: "modal", bs_target: "#contactModal" } %>
             </li>
             <li class="nav-item dropdown mx-2 ">
             <div class="nav-button-orange">
@@ -26,10 +27,16 @@
             </a>
 
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" data-dropdown-target="menu">
-                <%= link_to "My profile", profile_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-                <%= link_to "My Coffee Machines", my_coffeemachine_path , class: "dropdown-item"%>
-              </div>
+
+
+                <%= link_to "My Profile", profile_path, class: "dropdown-item" %>
+                <%= link_to "My Coffee Machines", my_coffeemachine_path, class: "dropdown-item" %>
+                 <div class="dropdown-divider"></div>
+                <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+
+
+
+
               </div>
             </li>
            <% else %>
@@ -43,3 +50,7 @@
       </div>
     </div>
   </div>
+
+</div>
+
+<%= render 'shared/contact_modal' %>

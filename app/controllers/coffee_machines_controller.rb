@@ -11,6 +11,7 @@ class CoffeeMachinesController < ApplicationController
     @user_coffeemachines = CoffeeMachine.where(user_id: current_user.id)
     @user = current_user
   end
+
   def new
     @coffee_machine = CoffeeMachine.new
   end
@@ -29,6 +30,5 @@ class CoffeeMachinesController < ApplicationController
   def coffee_machine_params
     params.require(:coffee_machine).permit(:UniqueLoginCode, :serial_number, :machine_type, :description, :coffee_machine_model_id, :manager_id , :photo)
   end
-
 
 end
