@@ -5,9 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home_before_login
-    if user_signed_in?
-      redirect_to root_path, notice: "You are already signed in."
-    end
+    redirect_to root_path, notice: "You are already signed in." if user_signed_in?
   end
 
   def home_after_login
