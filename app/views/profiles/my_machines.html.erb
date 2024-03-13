@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+<div class="container">
+ <p> Hello, <%= "#{@user.first_name} #{@user.last_name}"%> here are all your Coffee Machines:</p>
+  <ul>
+    <% @coffee_machines.each do |machine| %>
+      <li>
+        <%= "Model: #{machine.coffee_machine_model.name}, Serial Number: #{machine.serial_number}, Type: #{machine.machine_type}, Description: #{machine.description}" %>
+      </li>
+    <% end %>
+  </ul>
+
+<!--here is modal to add new coffee machine-->
+ <i class="fa-solid fa-pen-to-square"></i> <%= link_to 'Edit', edit_profile_path %>
+</div>
