@@ -1,30 +1,33 @@
-<div class="container fluid">
+<div class="container fluid navbar-top">
 
-  <div class="navbar navbar-expand-sm navbar-light navbar-style">
-    <div class="container-fluid">
-      <%= link_to  home_after_login_path	, class: "navbar-brand" do %>
-        <%= image_tag "logo-transparent.png" %>
+  <div class="navbar navbar-expand-sm navbar-dark navbar-style">
+      <%= link_to  home_after_login_path	, class: "navbar-brand style-logo" do %>
+        <%= image_tag "Rectangle 13(1).png" %>
       <% end %>
 
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in?%>
-            <li class="nav-item active mx-2">
-                <%= link_to 'Coffee Machines', coffee_machines_path ,class:" nav-link" %>
+            <li class="nav-item active mx-2 ">
+                <%= link_to 'Coffee Machines', coffee_machines_path ,class:" nav-link nav-button-blue" %>
 
             </li>
             <li class="nav-item mx-2">
-              <%= link_to "Questions and Answers", question_and_answers_path, class: "nav-link" %>
+              <%= link_to "Questions and Answers", question_and_answers_path, class: "nav-link nav-button-blue" %>
             </li>
             <li class="nav-item mx-2">
-             <%= link_to "Contact Manufacture", manufacture_contact_path, class: "nav-link", data: { bs_toggle: "modal", bs_target: "#contactModal" } %>
+
+             <%= link_to "Contact Manufacture", manufacture_contact_path, class: "nav-link nav-button-orange", data: { bs_toggle: "modal", bs_target: "#contactModal" } %>
             </li>
-            <li class="nav-item dropdown mx-2">
+            <li class="nav-item dropdown mx-2 ">
+            <div class="nav-button-orange">
             <a href="#" class="avatar nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-action="click->dropdown#showMenu">
-               <%= tag.i '', class: "fa-solid fa-user", alt: "dropdown menu" %>
+               <%= tag.i ' ', class: "fa-solid fa-user", alt: "dropdown menu" %>
             </a>
+
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" data-dropdown-target="menu">
+
 
                 <%= link_to "My Profile", profile_path, class: "dropdown-item" %>
                 <%= link_to "My Coffee Machines", my_coffeemachine_path, class: "dropdown-item" %>
@@ -33,19 +36,21 @@
 
 
 
+
               </div>
             </li>
            <% else %>
 
-              <%= link_to "Login", new_user_session_path, class: "btn btn-primary nav-link nav-item" %>
+              <%= link_to "Login", new_user_session_path, class: "btn  nav-link nav-item nav-button-orange" %>
 
-              <%= link_to 'Sign Up', new_user_registration_path ,class: "btn btn-primary nav-link nav-item"%>
+              <%= link_to 'Sign Up', new_user_registration_path ,class: "btn nav-link nav-item nav-button-blue"%>
 
            <% end %>
         </ul>
       </div>
     </div>
   </div>
+
 </div>
 
 <%= render 'shared/contact_modal' %>
