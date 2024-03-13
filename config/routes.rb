@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   resources :question_and_answers, only: [:index]
   resources :coffee_machines
-  resource :profile, only: [:show, :edit, :update] do
-    get 'my_machines', on: :collection
-  end
+
+  resource :profile, only: [:show, :edit, :update]
+  get 'my_coffeemachine', to: 'coffee_machines#my_coffeemachine'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
