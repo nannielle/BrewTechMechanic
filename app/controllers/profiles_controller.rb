@@ -1,13 +1,17 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
-
   def show
     @user = current_user
   end
 
   def edit
     @user = current_user
+  end
+
+  def my_machines
+    @user = current_user
+    @coffee_machines = @user.coffee_machines
   end
 
   def update
