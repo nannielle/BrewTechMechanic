@@ -1,18 +1,74 @@
-<div class="container">
-<div>after log in</div>
+<div class="homepage-image-top"></div>
+<div class="gray-space ">
+  <div class="content row mx-5 ">
+    <div class="text-container col-md-7 ">
+      <div class="text">
+        Having trouble with your Coffee Machine?
+        <h3 style="text-align:center;" class="my-3"> <b>We want to help!</b></h3>
+        Your can read instructions or watch video</div>
+      </div>
+      <div class="button-container col-md-5 ">
+      <input type="text" placeholder=" please insert an error code" class=" mx-2">
+        <button class="btn">
+          submit
+        </button>
+      </div>
+  </div>
+</div>
+<div class="ask-question-space" style="text-align:center;">
+<p>Do you have a question ?</p>
+<div class="row mt-5">
+   <div class="col-md-4 ">
+      <div class="question-card">
 
-<button class="btn btn-primary">Please insert your
-Error Code HERE </button>
-<br/>
-  <%= link_to 'HERE you can find asnwers for most common questions', question_and_answers_path ,class:"btn btn-primary mt-5"%>
-<br/>
+        <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
+          <ul>
+            <li class="mt-5">Can i feel long cups or Thermos?
+            </li>
+            <li class="mt-2">What temperature is good for tea water?
+            </li>
+          </ul>
+      </div>
+     </div>
+  <div class="col-md-4 " >
+   <div class="question-card">
+      <%= image_tag "coffee_icon_1.png", alt: "icon Image", class: "img-fluid mt-4" %>
+      <ul>
+        <li class="mt-5">Do i need a filter?
+        </li>
+        <li class="mt-2">How many grams of coffee per cup?
+        </li>
+      </ul>
+      </div>
+  </div>
+     <div class="col-md-4">
+      <div class="question-card">
+
+        <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
+          <ul>
+            <li class="mt-5">Can i feel long cups or Thermos?
+            </li>
+            <li class="mt-2">What temperature is good for tea water?
+            </li>
+          </ul>
+      </div>
+     </div>
+
+  </div>
+  <div class="button-container ">
+      <button class="btn">
+          <%= link_to " FIND YOUR ANSWERS HERE", question_and_answers_path, class: "nav-link" %>
+      </button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 <button class="btn btn-primary mt-5">Please feel the form and we will contact you as soon as possible! </button>
 
 <br/>
-
-
-<%= cl_image_tag("plpcxbcum4xv0gx7lhmb",
-      width: 400, height: 300, crop: :fill) %>
-
-<%= cl_image_tag("jcig4f9b1sgpswlbpfwj",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>

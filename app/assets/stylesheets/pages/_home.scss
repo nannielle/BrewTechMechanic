@@ -1,1 +1,98 @@
 // Specific CSS for your home-page
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  // overflow: hidden; /* Hide scrollbars */
+}
+
+.homepage-image-top{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+
+}
+
+.homepage-image-top:nth-child(even) {
+  background-image: url(homepage_pic_1.png);
+}
+.gray-space {
+  flex: 1; /* Take remaining space */
+  background-color: rgb(145, 153, 160) ;/* Gray background color */
+  height: 40vh;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  height: 60%; /* Set height to 60% of viewport height */
+
+}
+.text-container {
+  flex: 1; /* Take half of the space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+.text {
+  font-size: 24px;
+  color: white;
+
+}
+.button-container {
+  flex: 1; /* Take half of the space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:5%;
+  font-size: 25px ;
+}
+.button-container button {
+  max-height: 100%;
+  max-width: 100%;
+  background-color:$orange-button ;
+  border-radius: 5px;
+  font-size: 25px ;
+
+
+}
+.button-container button:hover{
+  background-color: $orange-hover !important;
+}
+.button-container input{
+  padding:5px;
+  border-radius: 5px;
+  background-color: rgb(214, 212, 212) !important;
+
+}
+.ask-question-space{
+  flex: 1; /* Take remaining space */
+  background-color: rgb(238, 234, 234) ;/* Gray background color */
+  height: 100vh;
+  padding: 5%;
+
+}
+.question-card{
+  box-shadow: 0px 14px 49px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  padding:10px;
+}
+.ask-question-space p{
+  font-size: 40px;
+}
+.ask-question-space ul{
+  margin-top: 2%;
+  margin-right: 4%;
+  list-style-type: none;
+}
+.img-fluid{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+
+}
