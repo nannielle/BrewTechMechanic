@@ -1,5 +1,5 @@
 class QuestionAndAnswersController < ApplicationController
     def index
-      @questions = QuestionAndAnswer.all
+      @questions_and_answers = QuestionAndAnswer.all
     end
 end
