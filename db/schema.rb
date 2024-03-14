@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_214003) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_14_142045) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_214003) do
   create_table "question_and_answers", force: :cascade do |t|
     t.string "question"
     t.text "answer"
-    t.bigint "coffee_machine_model_id", null: false
+    t.bigint "coffee_machine_model_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["coffee_machine_model_id"], name: "index_question_and_answers_on_coffee_machine_model_id"
