@@ -12,6 +12,31 @@ require 'faker'
 require "open-uri"
 require "yaml"
 
+puts 'Cleaning records...'
+
+
+CoffeeMachine.destroy_all
+Error.destroy_all
+Manager.destroy_all
+Review.destroy_all
+
+QuestionAndAnswer.destroy_all
+
+Review.destroy_all
+puts 'Cleaning users...'
+
+User.destroy_all
+puts 'Creating user...'
+User.create!(
+  id: 1,
+  email: 'nina@gmail.com',
+  password: '123456',
+  first_name: 'Nina',
+  last_name: 'Asir',
+  address: 'Einsteinstrasse 3',
+  city: 'Berlin',
+  phone_number: '004911111111'
+)
 puts "Creating 10 fake Users"
 
 10.times.map do
@@ -33,18 +58,18 @@ CoffeeMachineModels.each do |model_name|
   CoffeeMachineModel.find_or_create_by!(name: model_name)
 end
 
-
-# Получаем ID всех созданных моделей кофемашин
 coffee_machine_model_ids = CoffeeMachineModel.pluck(:id)
 
-# Создаём кофемашины и привязываем их к моделям кофемашин
 10.times do
+  picture_url = Faker::LoremFlickr.image(size: '600x400', search_terms: ['coffee'])
+  tempfile = URI.open(picture_url)
   CoffeeMachine.create!(
+    user_id: 1,
+    photo: { io: tempfile, filename: File.basename(tempfile.path) },
     UniqueLoginCode: Faker::Code.unique.asin,
     serial_number: Faker::Alphanumeric.alphanumeric(number: 10),
     machine_type: "traditional",
     description: Faker::Lorem.paragraph,
-    user_id: User.pluck(:id).sample, # Предполагаем, что пользователи уже созданы
     coffee_machine_model_id: coffee_machine_model_ids.sample # Случайный выбор из существующих ID моделей
   )
 end
