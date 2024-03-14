@@ -5,8 +5,11 @@
 
 .navbar-style .navbar-collapse {
   flex-grow: 0;
-}
 
+}
+.navbar-collapse{
+  margin-left: 0%;
+}
 .navbar-style .navbar-brand img {
   width: 140px;
 }
@@ -67,4 +70,5 @@
   top: 0;
   left:300px !important;
   z-index: 1;
+  min-width: 850px !important;
 }

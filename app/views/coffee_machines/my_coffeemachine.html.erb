@@ -1,15 +1,27 @@
-<h1>My Coffee Machines</h1>
+<div class="my-coffeemachine" style="margin-top:10%";>
+<h1 class="mx-5 ">My Coffee Machines:</h1>
 
-<% @user_coffeemachines.each do |coffeemachine| %>
-  <div>
-    <h2><%= coffeemachine.machine_type %></h2>
-    <p><%= coffeemachine.description %></p>
-    <% if coffeemachine.photo.attached? %>
-      <%= cl_image_tag coffeemachine.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-      <p>UniqueLoginCode<%= coffeemachine.UniqueLoginCode %></p>
 
-    <!-- Add more coffee machine details here -->
-  </div>
-<% end %>
-<%= link_to 'New Coffee Machine', new_coffee_machine_path, class: 'btn btn-primary' %>
+
+<div class="container mt-5">
+  <% @user_coffeemachines.in_groups_of(3, false) do |group| %>
+    <div class="row">
+      <% group.compact.each do |coffee_machine| %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+
+            <% if coffee_machine.photo.attached? %>
+                <%= cl_image_tag coffee_machine.photo.key, class: "card-img-top", crop: :fill %>
+              <% end %>
+                          <div class="card-body">
+              <h5 class="card-title"><%= coffee_machine.machine_type %></h5>
+              <p class="card-text">Description: <%= coffee_machine.description %></p>
+              <!-- Add other details if needed -->
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+</div>
