@@ -1,26 +1,12 @@
+
+<div style="margin:10% ">
 <h1>New Coffee Machine</h1>
 
 <%= form_for @coffee_machine do |f| %>
-  <%= f.label :UniqueLoginCode %>
+  <%= f.label :UniqueLoginCode ,class:"mt-5" %>
   <%= f.text_field :UniqueLoginCode %>
 
 
-  <%= f.label :serial_number %>
-  <%= f.text_field :serial_number %>
-
-  <%= f.file_field :photo %>
-
-  <%= f.label :machine_type %>
-  <%= f.text_field :machine_type %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.label :coffee_machine_model_id %>
-  <%= f.collection_select :coffee_machine_model_id, CoffeeMachineModel.all, :id, :name %>
-
-  <%= f.label :manager_id %>
-  <%= f.collection_select :manager_id, Manager.all, :id, :name %>
-
-  <%= f.submit %>
+  <%= f.submit "Add new Coffee Machine"%>
 <% end %>
+</div>
