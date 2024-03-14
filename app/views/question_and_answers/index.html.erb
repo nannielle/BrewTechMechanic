@@ -9,3 +9,22 @@
   </div>
 
 </div>
+
+<div class="flex-container">
+
+  <% if @questions_and_answers.any? %>
+    <ol>
+      <% @questions_and_answers.each do |q_and_a| %>
+        <li>
+          <div style="display: flex; justify-content: space-between;">
+            <div style="margin-right: 20px;"><strong>Question:</strong> <%= q_and_a.question %></div>
+            <div><strong>Answer:</strong> <%= q_and_a.answer %></div>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+  <% else %>
+    <p>There is no QA</p>
+  <% end %>
+
+</div>
