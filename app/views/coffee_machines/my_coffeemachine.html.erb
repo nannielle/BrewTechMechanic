@@ -1,6 +1,10 @@
 <div class="my-coffeemachine" style="margin-top:10%";>
 <h1 class="mx-5 ">My Coffee Machines:</h1>
 
+<div class="container mt-4">
+  <%= link_to "Add Coffee Machine", new_coffee_machine_path(user_id: current_user.id), class: "btn btn-primary" %>
+</div>
+
 
 
 <div class="container mt-5">
