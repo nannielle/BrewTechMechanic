@@ -7,7 +7,8 @@ body {
 }
 
 .homepage-image-top{
-  height: 100vh;
+  height: auto;
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,15 +16,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
-
+  // background-image: url(homepage_pic_1.png);
 }
 
-.homepage-image-top:nth-child(even) {
-  background-image: url(homepage_pic_1.png);
-}
+
 .gray-space {
   flex: 1; /* Take remaining space */
-  background-color: rgb(145, 153, 160) ;/* Gray background color */
+  background-color: rgb(159, 197, 212) ;/* Gray background color */
   height: 40vh;
 }
 .content {

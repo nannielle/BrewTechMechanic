@@ -1,0 +1,44 @@
+.QandA-container{
+  background-color: rgb(235, 226, 216);
+  padding-top: 10%;
+}
+
+.question-answer {
+  display: flex;
+  align-items: center;
+  margin-top: -5%;
+}
+
+.question{
+  box-shadow: 0px 14px 49px 0px rgba(0, 0, 0, 0.11);
+border-radius: 10px;
+  padding: 15px;
+  margin-top: -30px;
+}
+
+.answer{
+  margin-top: 200px !important; /* Add margin between question and answer */
+  box-shadow: 0px 14px 49px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  padding: 15px;
+
+
+}
+.line-container{
+  text-align: center;
+
+  margin-top: 100px;
+
+}
+.qa-line{
+  height: 80px;
+
+  border-left: 4px solid black;
+  margin-left: 50%;
+}
+.icon-qa{
+  border-radius: 50%;
+  border: 3px black solid;
+  padding: 10px;
+  margin-top: 10px;
+}

@@ -1,11 +1,30 @@
-<h1>Here you can find answers to the most common questions</h1>
-
+<div class="QandA-container">
+<h1 style="text-align:center;">Here you can find answers to the most common questions</h1>
 
 <div class="flex-container">
-  <div class="flex-item">
+  <ul>
+    <% @questions.each do |question| %>
+      <div class="row question-answer">
+        <div class="col-2"></div>
+        <div class="col-3 question">
+          <h3><%= question.question %></h3>
+        </div>
+        <div class="col-1 line-container">
+           <div class="qa-line"></div>
+           <i class="fa-solid fa-hammer icon-qa"></i>
+
+        </div>
+        <div class="col-3 answer ">
+          <p><%= question.answer %></p>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
+
+
+<%#
     <p class="question"> 1. DO I NEED A FILTER FOR MY COFFEE MACHINE?</p>
     <p class="answer">Yes, it is very important to use a filter for the coffee machine,
-    because it will make the boiler work much longer and the coffee tastier.</p>
-  </div>
-
+    because it will make the boiler work much longer and the coffee tastier.</p> %>
 </div>
