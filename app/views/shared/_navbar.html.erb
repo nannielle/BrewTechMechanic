@@ -37,11 +37,12 @@
               </div>
             </li>
            <% else %>
-
-              <%= link_to "Login", new_user_session_path, class: "btn  nav-link nav-item nav-button-orange" %>
-
-              <%= link_to 'Sign Up', new_user_registration_path ,class: "btn nav-link nav-item nav-button-blue"%>
-
+              <button type="button" class="btn  nav-link nav-item nav-button-orange" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Login
+              </button>
+              <button type="button" class="btn nav-link nav-item nav-button-blue" data-bs-toggle="modal" data-bs-target="#signupModal">
+                Sign Up
+              </button>
            <% end %>
         </ul>
       </div>
@@ -51,3 +52,6 @@
 </div>
 
 <%= render 'shared/contact_modal' %>
+
+<%= render "shared/login_modal" %>
+<%= render "shared/signup_modal" %>

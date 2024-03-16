@@ -1,0 +1,70 @@
+.modal-size{
+  width: 150% !important;
+color:#ffffff !important;
+}
+
+.left-login-modal{
+  background-color:$login-modal-bg-left ;
+}
+.left-login-modal > i{
+  margin: 13px !important;
+  font-size: 1.5em !important;
+}
+.left-login-modal-content{
+  margin-top: 20%;
+}
+.left-login-modal-content p{
+  padding:0 10% ;
+}
+.left-login-modal-content i{
+  font-size: 6em;
+
+}
+
+.modal-content{
+  background-color: $login-modal-bb-content;
+  margin-left: -20px;
+}
+
+.form-control {
+  border: none; /* Remove the border */
+  border-radius: 0; /* Remove any border-radius */
+  border-bottom: 1px solid #ced4da; /* Add a bottom border */
+  background-color: transparent; /* Set the background color to transparent */
+  box-shadow: none; /* Remove any box shadow */
+  outline: none; /* Remove the outline when focused */
+}
+
+/* Style the input label */
+.form-floating  {
+  color: #eaedef; /* Set label color */
+  font-size: 0.8rem; /* Set label font size */
+}
+
+/* Style the input label when it's floating */
+.form-floating input:focus~label,
+// .form-floating input:not(:placeholder-shown)~label {
+//   color: #198754; /* Change label color when input is focused or has value */
+// }
+
+.form-control:focus {
+  border-bottom: 1px solid transparent;
+  border: none; /* Remove the border */
+  border-radius: 0; /* Remove any border-radius */
+  border-bottom: 1px solid #ced4da; /* Add a bottom border */
+  background-color: transparent; /* Set the background color to transparent */
+  box-shadow: none; /* Remove any box shadow */
+  outline: none;
+}
+.modal-header{
+  border:none !important;
+}
+.submit-button{
+  width: 100%;
+  margin: 0 auto;
+  background-color: $login-button-bg;
+}
+.submit-button:hover{
+  background-color: $login-button-bg-hover;
+  color: black;
+}
