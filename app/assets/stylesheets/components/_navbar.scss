@@ -1,3 +1,11 @@
+.navbar-top {
+  position: fixed;
+  top: 0;
+  left:300px !important;
+  z-index: 1;
+  min-width: 1000px;
+}
+
 .navbar-style {
   justify-content: space-between !important;
 
@@ -30,7 +38,7 @@
 
 .nav-button-orange:hover{
   background-color: $orange-hover;
-  color: rgb(145, 60, 4);
+  color:$orange-button;
   border-radius: 20px;
   // padding: 8px 20px;
   margin-right: 40px;
@@ -38,16 +46,16 @@
 }
 
 .nav-button-blue{
-  background-color: rgb(230, 245, 247);
+  background-color: $text-white;
   border-radius: 20px;
-  border: 2px solid rgb(14, 97, 136);
-  color: rgb(14, 97, 136);
+  border: 2px solid $dark-brown;
+  color: $dark-brown;
   // padding: 8px 20px;
 
 }
 .nav-button-blue:hover{
-  background-color: rgb(14, 97, 136);
-  color: rgb(230, 245, 247);
+  background-color: $dark-brown;
+  color: $text-white;
   border-radius: 20px;
   // padding: 8px 20px;
   min-width: 60px;
@@ -58,17 +66,10 @@
   border-radius: 50%;
 }
 .dropdown-menu{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   background-color: $orange-button;
   border-radius: 10px;
 }
 .dropdown-item:hover{
   background-color: $orange-hover;
-}
-.navbar-top {
-  position: fixed;
-  top: 0;
-  left:300px !important;
-  z-index: 1;
-  min-width: 850px !important;
 }
