@@ -1,10 +1,10 @@
 .modal-size{
   width: 150% !important;
-color:#ffffff !important;
+color:$text-white !important;
 }
 
 .left-login-modal{
-  background-color:$login-modal-bg-left ;
+  background-color: $login-modal-bg-left ;
 }
 .left-login-modal > i{
   margin: 13px !important;
@@ -29,7 +29,7 @@ color:#ffffff !important;
 .form-control {
   border: none; /* Remove the border */
   border-radius: 0; /* Remove any border-radius */
-  border-bottom: 1px solid #ced4da; /* Add a bottom border */
+  border-bottom: 1px solid $beige; /* Add a bottom border */
   background-color: transparent; /* Set the background color to transparent */
   box-shadow: none; /* Remove any box shadow */
   outline: none; /* Remove the outline when focused */
@@ -37,7 +37,7 @@ color:#ffffff !important;
 
 /* Style the input label */
 .form-floating  {
-  color: #eaedef; /* Set label color */
+  color: $text-white; /* Set label color */
   font-size: 0.8rem; /* Set label font size */
 }
 
@@ -51,7 +51,7 @@ color:#ffffff !important;
   border-bottom: 1px solid transparent;
   border: none; /* Remove the border */
   border-radius: 0; /* Remove any border-radius */
-  border-bottom: 1px solid #ced4da; /* Add a bottom border */
+  border-bottom: 1px solid $text-white; /* Add a bottom border */
   background-color: transparent; /* Set the background color to transparent */
   box-shadow: none; /* Remove any box shadow */
   outline: none;

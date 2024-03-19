@@ -1,19 +1,26 @@
-// Define variables for your color scheme
 
-// For example:
+$gray: #0E0000;
+$light-gray: #F4F4F4;
 $red: #FD1015;
-$blue: #0D6EFD;
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
 
+// main color:
+$dark-brown:#4a3933;
+$gold:#F0A500;
+$red-orange:#E45826;
+$beige:#E6D5B8;
 $orange-button: #DB6510;
 $orange-hover : #F1863B;
+$text-white:white;
+$blue: rgb(14, 97, 136);
+
 
           // login modal color
-$login-modal-bb-content : #3C2D21;
+
+$home-ask-bg:#ece5da ;
+$login-modal-bb-content : $dark-brown;
 $login-modal-bg-left:$orange-button;
 $login-button-bg:$orange-button;
 $login-button-bg-hover:$orange-hover
