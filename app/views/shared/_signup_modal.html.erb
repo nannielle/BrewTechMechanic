@@ -1,77 +1,30 @@
-<div data-controller="modal">
-
-
-<!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-<div class="modal-dialog ">
-<div class="row modal-size">
-<div class="col-6 left-login-modal ">
-
-<i class="fa-solid fa-mug-hot"></i>
-
-<div class="text-center left-login-modal-content">
-  <div class="">
-    <p>Plan your activities and control your progress online</p>
-  </div>
-  <br/>
-  <i class="fa-solid fa-screwdriver-wrench"></i>
-</div>
-
-</div>
-<div class="col-6">
-
-    <div class="modal-content">
-      <div class="modal-header ">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-              <h5 class="modal-title  mb-5" id="loginModalLabel">Login to Your Account</h5>
-
-
-        <%= render 'devise/registrations/new'%>
-
-      </div>
-
-    </div>
-  </div>
-
-</div>
-</div>
-
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signupModalLabel">Sign Up for an Account</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="row modal-size">
+    <div class="col-6 left-login-modal ">
+
+      <i class="fa-solid fa-mug-hot"></i>
+
+      <div class="text-center left-login-modal-content">
+        <div class="">
+          <p>Plan your activities and control your progress online</p>
+        </div>
+        <br/>
+        <i class="fa-solid fa-screwdriver-wrench"></i>
       </div>
-      <div class="modal-body">
-        <%= render 'devise/registrations/new'%>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Sign Up</button>
+    </div>
+    <div class="col-6">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class="modal-body">
+            <h5 class="modal-title  mb-5" id="loginModalLabel">Sign Up for an Account</h5>
+
+            <%= render 'devise/registrations/new'%>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div> %>
+</div>

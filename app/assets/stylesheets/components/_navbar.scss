@@ -49,13 +49,13 @@
   background-color: $text-white;
   border-radius: 20px;
   border: 2px solid $dark-brown;
-  color: $dark-brown;
+  color: $dark-brown !important;
   // padding: 8px 20px;
 
 }
 .nav-button-blue:hover{
   background-color: $dark-brown;
-  color: $text-white;
+  color: $text-white !important;
   border-radius: 20px;
   // padding: 8px 20px;
   min-width: 60px;
