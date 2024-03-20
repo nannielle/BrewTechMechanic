@@ -1,7 +1,47 @@
+<div>
 
-<div class="">
+<div class="homepage-topimage-container">
   <%= image_tag "homepage_pic_1.png", alt:"Homepage Image", class:"homepage-image-top" %>
+
+
+
+  <div data-controller="slideshow" class="homepage-slideshow ">
+
+
+    <div >
+
+      <div  class="slideshow-container">
+        <% 7.times do |i| %>
+
+        <div class="line-and-dot-container">
+
+          <div class="dot-container">
+            <span class="number-in-dot"><%= i+1 %></span>
+            <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>"></span>
+          </div>
+          <% if i < 6   %>
+           <div class="line-slideshow"> </div>
+           <% end %>
+        </div>
+        <% end %>
+
+
+      <% text =["aaaaaaaa","bbbbbbbbbb" ,"cccccccccccc" ,"ddddddddddd" ,"eeeeeeeeeeeeeeeee" ,"ffffffffffffffffffff" ,"ggggggggggggggg"] %>
+      <% 7.times do |i| %>
+        <div class="mySlides fade" data-slideshow-target="slide">
+          <p class="text-slideshow"><%= "#{text[i]}" %></p>
+          <div class="text-slideshow">Caption Text <%= i + 1 %></div>
+        </div>
+      <% end %>
 </div>
+    </div>
+    <br>
+
+
+  </div>
+
+</div>
+
   <div class="gray-space ">
     <div class="content row mx-5 ">
       <div class="text-container col-md-7 ">
@@ -67,3 +107,4 @@
 
 
 <button class="btn btn-primary mt-5">Please feel the form and we will contact you as soon as possible! </button>
+</div>
