@@ -1,31 +1,36 @@
 coffee_machines:
   - name: "M200"
     type: "traditional"
+    coffee_machine_model_id: 1
     description: "The M200 is the result of a multi-year research project.
-A process of collective genesis involving the contribution of engi- neers and production technicians,
+A process of collective genesis involving the contribution of engineers and production technicians,
 baristas and sensory scienti- sts, brand managers and industrial designers,
 resulting in an unprecedented machine."
 
   - name: "M39RE"
     type: "traditional"
+    coffee_machine_model_id: 2
     description: "M39 RE, the new professional machine for bars
 that celebrates the first hundred years of Gruppo Cimbali successes by embracing the future"
 
   - name: "M26"
     type: "traditional"
+    coffee_machine_model_id: 3
     description: "The M26 is a versatile machine made of steel and ABS
 and equipped with a LaCimbali heating system to guarantee excellent quality in the cup.
 Available in the versions SE and BE"
 
   - name: "M21 Junior"
     type: "traditional"
+    coffee_machine_model_id: 4
     description: "M21 Junior is a machine designed and built for those caterers who,
 although have limited space at disposal, still want to offer traditional Italianstyle espresso coffee and cappuccino.
 Junior is a one-group machine available both into the automatic (M21 Junior DT) and into the
 semiautomatic M21 Junior S) version."
 
   - name: "S60"
-    type: "fully qutomatic"
+    type: "fully automatic"
+    coffee_machine_model_id: 5
     description: "The first fully automatic coffee machine with a look and feel of a traditional one:
 LaCimbali traditional C side shape
 Lever control for manual steam wands in stainless steel material
@@ -35,6 +40,7 @@ finely designed to guarantee high speed of service."
 
   - name: "S30"
     type: "fully automatic"
+    coffee_machine_model_id: 6
     description: "S30 is the perfect machines for bakeries, restaurants,
 medium coffee chains and for all those who want to pair cakes and other products with the perfect recipe.
 This, thanks to the exclusive cold milk foam technology,
@@ -43,6 +49,7 @@ Up to 300 cups per day, all, of course, with the same excellent quality."
 
   - name: "S-Lite"
     type: "fully automatic"
+    coffee_machine_model_id: 7
     description: "In the bustling world of small businesses, every inch of space counts.
 Every piece of equipment must justify its place.
 Designed for those who need a compact product without compromising on the in-cup coffee quality.
@@ -51,6 +58,7 @@ ease of use, and easy maintenance."
 
   - name: "S20 Fresh Brew"
     type: "fully automatic"
+    coffee_machine_model_id: 8
     description: "The new S20 FB allows you to select up to 2 different temperatures
 to enjoy FRESH BREW however you prefer it.
 Enjoy a wide range of hot and iced coffee drinks in different sizes and flavours:

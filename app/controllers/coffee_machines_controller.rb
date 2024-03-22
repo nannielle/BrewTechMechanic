@@ -8,13 +8,11 @@ class CoffeeMachinesController < ApplicationController
   end
 
   def my_coffeemachine
-    @user_coffeemachines = CoffeeMachine.where(user_id: current_user.id)
+    @user_coffeemachines = UserCoffeeMachine.where(user_id: current_user.id).map { |user_coffee_machine| user_coffee_machine.coffee_machine }
     @user = current_user
+    @coffee_machine = UserCoffeeMachine.new
   end
 
-  def new
-    @coffee_machine = CoffeeMachine.new
-  end
 
   def create
     @coffee_machine = current_user.coffee_machines.build(coffee_machine_params)
@@ -28,7 +26,7 @@ class CoffeeMachinesController < ApplicationController
   private
 
   def coffee_machine_params
-    params.require(:coffee_machine).permit(:UniqueLoginCode, :serial_number, :machine_type, :description, :coffee_machine_model_id, :manager_id , :photo)
+    params.require(:coffee_machine).permit(:serial_number, :coffee_machine_model_id, :manager_id)
   end
 
 end
