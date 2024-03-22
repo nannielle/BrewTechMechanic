@@ -14,6 +14,7 @@ require "yaml"
 
 puts 'Cleaning records...'
 
+UserCoffeeMachine.destroy_all
 ErrorMessage.destroy_all
 Review.destroy_all
 QuestionAndAnswer.destroy_all
@@ -27,7 +28,7 @@ User.destroy_all
 
 puts 'Creating user...'
 User.create!(
-  id: 1,
+  #id: 1,
   email: 'nina@gmail.com',
   password: '123456',
   first_name: 'Nina',
@@ -50,7 +51,7 @@ puts "Creating 10 fake Users"
   )
 end
 
-coffee_machine_models = ["Model 1", "Model 2", "Model 3"]
+coffee_machine_models = ["1", "2", "3", "4", "5", "6", "7", "8"]
 coffee_machine_models.each do |model_name|
   CoffeeMachineModel.find_or_create_by!(name: model_name)
 end
@@ -76,19 +77,16 @@ coffee_machines_data.each_with_index do |coffee_machine_data, i|
 
   coffee_machine = CoffeeMachine.new(
     # name: coffee_machine_data["name"],
+    coffee_machine_model_id: coffee_machine_data["coffee_machine_model_id"],
     description: coffee_machine_data["description"],
-    machine_type: coffee_machine_data["type"],
-    user: User.all.sample,
-    coffee_machine_model: CoffeeMachineModel.all.sample,
-    manager: Manager.all.sample
+    machine_type: coffee_machine_data["type"]
   )
   file = URI.open("https://res.cloudinary.com/da6azjfr5/image/upload/v1711130324/m100_attiva_categoria_tradizionali_0_erlff4.png")
-  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{rand(1..100)}.png", content_type: "image/png")
+  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.png", content_type: "image/png")
 
   coffee_machine.save!
 
 end
-
 
 
 # 10.times do
@@ -130,7 +128,7 @@ end
   )
 end
 
-
+puts "Creating Questions and Answers"
 file_path = Rails.root.join('db', 'qa.yml')
 questions_and_answers_data = YAML.load_file(file_path)
 

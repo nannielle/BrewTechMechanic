@@ -1,3 +1,3 @@
 class Manager < ApplicationRecord
-  has_many :coffee_machines
+  has_many :user_coffee_machines
 end

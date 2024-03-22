@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_20_185945) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_22_194057) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,19 +49,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_185945) do
   end
 
   create_table "coffee_machines", force: :cascade do |t|
-    t.string "UniqueLoginCode"
-    t.string "serial_number"
     t.string "machine_type"
     t.text "description"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "coffee_machine_model_id", null: false
-    t.bigint "manager_id"
     t.string "photo"
     t.index ["coffee_machine_model_id"], name: "index_coffee_machines_on_coffee_machine_model_id"
-    t.index ["manager_id"], name: "index_coffee_machines_on_manager_id"
-    t.index ["user_id"], name: "index_coffee_machines_on_user_id"
   end
 
   create_table "error_messages", force: :cascade do |t|
@@ -101,6 +95,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_185945) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "user_coffee_machines", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "serial_number"
+    t.bigint "manager_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "coffee_machine_id"
+    t.index ["coffee_machine_id"], name: "index_user_coffee_machines_on_coffee_machine_id"
+    t.index ["manager_id"], name: "index_user_coffee_machines_on_manager_id"
+    t.index ["user_id"], name: "index_user_coffee_machines_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -123,10 +129,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_185945) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "coffee_machines", "coffee_machine_models"
-  add_foreign_key "coffee_machines", "managers"
-  add_foreign_key "coffee_machines", "users"
   add_foreign_key "error_messages", "coffee_machine_models"
   add_foreign_key "question_and_answers", "coffee_machine_models"
   add_foreign_key "reviews", "question_and_answers"
   add_foreign_key "reviews", "users"
+  add_foreign_key "user_coffee_machines", "coffee_machines"
+  add_foreign_key "user_coffee_machines", "managers"
+  add_foreign_key "user_coffee_machines", "users"
 end

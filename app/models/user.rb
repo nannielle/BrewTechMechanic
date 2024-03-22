@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
-  has_many :coffee_machines
+  has_many :user_coffee_machines
   has_many :reviews
 end
