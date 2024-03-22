@@ -1,12 +1,13 @@
 
 <div style="margin:10% ">
-<h1>New Coffee Machine</h1>
+<h4>You can add a coffee machine to your list
+by entering the code found on the back cover of your machine</h4>
 
 <%= form_for @coffee_machine do |f| %>
   <%= f.label :UniqueLoginCode ,class:"mt-5" %>
   <%= f.text_field :UniqueLoginCode %>
 
 
-  <%= f.submit "Add new Coffee Machine"%>
+  <%= f.submit "Add a new coffee machine"%>
 <% end %>
 </div>

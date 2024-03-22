@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_14_142045) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_20_185945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,13 +64,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_14_142045) do
     t.index ["user_id"], name: "index_coffee_machines_on_user_id"
   end
 
-  create_table "errors", force: :cascade do |t|
+  create_table "error_messages", force: :cascade do |t|
     t.text "textdescription"
     t.string "youtubelink"
     t.bigint "coffee_machine_model_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["coffee_machine_model_id"], name: "index_errors_on_coffee_machine_model_id"
+    t.index ["coffee_machine_model_id"], name: "index_error_messages_on_coffee_machine_model_id"
   end
 
   create_table "managers", force: :cascade do |t|
@@ -125,7 +125,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_14_142045) do
   add_foreign_key "coffee_machines", "coffee_machine_models"
   add_foreign_key "coffee_machines", "managers"
   add_foreign_key "coffee_machines", "users"
-  add_foreign_key "errors", "coffee_machine_models"
+  add_foreign_key "error_messages", "coffee_machine_models"
   add_foreign_key "question_and_answers", "coffee_machine_models"
   add_foreign_key "reviews", "question_and_answers"
   add_foreign_key "reviews", "users"

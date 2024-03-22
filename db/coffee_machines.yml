@@ -2,7 +2,7 @@ coffee_machines:
   - name: "M200"
     type: "traditional"
     description: "The M200 is the result of a multi-year research project.
-A process of collective genesis involving the contribution of engi- neers and production technicians,
+A process of collective genesis involving the contribution of engineers and production technicians,
 baristas and sensory scienti- sts, brand managers and industrial designers,
 resulting in an unprecedented machine."
 
@@ -25,7 +25,7 @@ Junior is a one-group machine available both into the automatic (M21 Junior DT) 
 semiautomatic M21 Junior S) version."
 
   - name: "S60"
-    type: "fully qutomatic"
+    type: "fully automatic"
     description: "The first fully automatic coffee machine with a look and feel of a traditional one:
 LaCimbali traditional C side shape
 Lever control for manual steam wands in stainless steel material

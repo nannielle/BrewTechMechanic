@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">We will be happy to assist you! Please fill out the form</h5>
+        <h5 class="modal-title" id="contactModalLabel">We will be happy to assist you! Please fill out the form:</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,7 +27,7 @@
 
           <div class="mb-3">
             <%= form.label :message, 'Please type your message here:' %>
-            <%= form.text_field :message, class: 'form-control', rows: 5, required: true %>
+            <%= form.text_field :message, class: 'form-control', rows: 9, required: true %>
           </div>
 
           <div class="modal-footer">

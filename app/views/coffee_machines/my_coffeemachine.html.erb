@@ -5,8 +5,6 @@
   <%= link_to "Add Coffee Machine", new_coffee_machine_path(user_id: current_user.id), class: "btn btn-primary" %>
 </div>
 
-
-
 <div class="container mt-5">
   <% @user_coffeemachines.in_groups_of(3, false) do |group| %>
     <div class="row">

@@ -14,16 +14,17 @@ require "yaml"
 
 puts 'Cleaning records...'
 
-CoffeeMachine.destroy_all
-Error.destroy_all
-Manager.destroy_all
+ErrorMessage.destroy_all
 Review.destroy_all
 QuestionAndAnswer.destroy_all
+CoffeeMachine.destroy_all
+Manager.destroy_all
+CoffeeMachineModel.destroy_all
 
-Review.destroy_all
 puts 'Cleaning users...'
 
 User.destroy_all
+
 puts 'Creating user...'
 User.create!(
   id: 1,
@@ -45,32 +46,64 @@ puts "Creating 10 fake Users"
     password: "securepassword",
     address: "#{Faker::Address.street_address}",
     city: "#{Faker::Address.city}",
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude,
     phone_number: Faker::PhoneNumber.cell_phone
   )
 end
 
-CoffeeMachineModels = ["Model 1", "Model 2", "Model 3"] #назвать с маленькой буквы, нижнее подчеркивание
-CoffeeMachineModels.each do |model_name|
+coffee_machine_models = ["Model 1", "Model 2", "Model 3"]
+coffee_machine_models.each do |model_name|
   CoffeeMachineModel.find_or_create_by!(name: model_name)
 end
 
-coffee_machine_model_ids = CoffeeMachineModel.pluck(:id)
+#coffee_machine_model_ids = CoffeeMachineModel.pluck(:id)
 
-10.times do
-  picture_url = Faker::LoremFlickr.image(size: '600x400', search_terms: ['coffee']) #
-  tempfile = URI.open(picture_url)
-  CoffeeMachine.create!(
-    user_id: 1,
-    photo: { io: tempfile, filename: File.basename(tempfile.path) },
-    UniqueLoginCode: Faker::Code.unique.asin,
-    serial_number: Faker::Alphanumeric.alphanumeric(number: 10),
-    machine_type: "traditional",
-    description: Faker::Lorem.paragraph,
-    coffee_machine_model_id: coffee_machine_model_ids.sample
+# Seed data for managers
+5.times do
+  Manager.create(
+    region: Faker::Address.community,
+    name: Faker::Name.name,
+    phone_number: Faker::PhoneNumber.phone_number,
+    email: Faker::Internet.email
   )
 end
+
+puts "Creating Coffee Machines"
+file_path = Rails.root.join('db', 'coffee_machines.yml')
+coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
+
+
+coffee_machines_data.each_with_index do |coffee_machine_data, i|
+
+  coffee_machine = CoffeeMachine.new(
+    # name: coffee_machine_data["name"],
+    description: coffee_machine_data["description"],
+    machine_type: coffee_machine_data["type"],
+    user: User.all.sample,
+    coffee_machine_model: CoffeeMachineModel.all.sample,
+    manager: Manager.all.sample
+  )
+  file = URI.open("https://res.cloudinary.com/da6azjfr5/image/upload/v1711130324/m100_attiva_categoria_tradizionali_0_erlff4.png")
+  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{rand(1..100)}.png", content_type: "image/png")
+
+  coffee_machine.save!
+
+end
+
+
+
+# 10.times do
+#   picture_url = Faker::LoremFlickr.image(size: '600x400', search_terms: ['coffee']) #
+#   tempfile = URI.open(picture_url)
+#   CoffeeMachine.create!(
+#     user_id: 1,
+#     photo: { io: tempfile, filename: File.basename(tempfile.path) },
+#     UniqueLoginCode: Faker::Code.unique.asin,
+#     serial_number: Faker::Alphanumeric.alphanumeric(number: 10),
+#     machine_type: "traditional",
+#     description: Faker::Lorem.paragraph,
+#     coffee_machine_model_id: coffee_machine_model_ids.sample
+#   )
+# end
 
 # # Seed data for coffee_machine_models
 # 5.times do
@@ -90,23 +123,20 @@ end
 
 # Seed data for errors
 10.times do
-  Error.create(
+  ErrorMessage.create(
     textdescription: Faker::Lorem.sentence,
     youtubelink: Faker::Internet.url,
-    coffee_machine_model_id: CoffeeMachineModel.pluck(:id).sample
+    coffee_machine_model: CoffeeMachineModel.all.sample
   )
 end
 
-# Seed data for managers
-5.times do
-  Manager.create(
-    region: Faker::Address.community,
-    name: Faker::Name.name,
-    phone_number: Faker::PhoneNumber.phone_number,
-    email: Faker::Internet.email
-  )
-end
 
+file_path = Rails.root.join('db', 'qa.yml')
+questions_and_answers_data = YAML.load_file(file_path)
+
+questions_and_answers_data.each do |q_and_a|
+  QuestionAndAnswer.find_or_create_by!(question: q_and_a['question'], answer: q_and_a['answer'], coffee_machine_model: CoffeeMachineModel.first)
+end
 
 # Seed data for reviews
 10.times do
@@ -115,11 +145,4 @@ end
     question_and_answer_id: QuestionAndAnswer.pluck(:id).sample,
     user_id: User.pluck(:id).sample
   )
-end
-
-file_path = Rails.root.join('db', 'qa.yml')
-questions_and_answers_data = YAML.load_file(file_path)
-
-questions_and_answers_data.each do |q_and_a|
-  QuestionAndAnswer.find_or_create_by!(question: q_and_a['question'], answer: q_and_a['answer'])
 end
