@@ -1,0 +1,50 @@
+error_messages:
+  - error_code: "E3"
+    error_name: "Fill error"
+    youtubelink: "https://www.youtube.com/embed/L1oiYWCWUmM?si=Qf02HMZBDXgzcZyJ&enablejsapi=1"
+    description: "Boiler is filling up too slowly. Check the water pressure. Turn the water supply tap completely open. Check the connection tube for any kinks. Switch the machine off and on again."
+
+  - error_code: "E5"
+    error_name: "Brewer error"
+    youtubelink: "https://www.youtube.com/watch?v=nSDFBf7ecEQ"
+    description: "Brewer error during start-up. Switch the machine off and on again."
+
+  - error_code: "E6"
+    error_name: "High temperature"
+    youtubelink: "https://www.youtube.com/watch?v=aTFsBqhpLes"
+    description: "Temperature sensor problem. Switch the machine off and on again."
+
+  - error_code: "E7"
+    error_name: "Brewer motor error"
+    youtubelink: "https://www.youtube.com/watch?v=RcsT1SdxbdE"
+    description: "Brewer motor overload/stuck. Remove the brewer from the machine, clean and install the brewer correctly. Switch the machine off and on again. Use the brush to clean the brewer."
+
+  - error_code: "E8"
+    error_name: "Mixer 2 error"
+    youtubelink: "https://www.youtube.com/watch?v=6-vOxkuQAcg"
+    description: "Mixer 2 overload/stuck. Remove the mixer from the machine, clean and install the mixer correctly. Switch the machine off and on again."
+
+  - error_code: "E11"
+    error_name: "Ingredient motor error"
+    youtubelink: "https://www.youtube.com/watch?v=6-vOxkuQAcg"
+    description: "Ingredient motor overload/stuck. Clean the canisters. Switch the machine off and on again."
+
+  - error_code: "E13"
+    error_name: "Mixer group error"
+    youtubelink: "https://www.youtube.com/watch?v=6-vOxkuQAcg"
+    description: "Brewer and mixer group overload. Clean the mixer rotor. Switch the machine off and on again."
+
+  - error_code: "E14"
+    error_name: "Output error"
+    youtubelink: "https://www.youtube.com/watch?v=6-vOxkuQAcg"
+    description: "Outlet group of the ingredient motor overload. Clean the canisters. Switch the machine off and on again."
+
+  - error_code: "E17"
+    error_name: "MDB error"
+    youtubelink: "https://www.youtube.com/watch?v=6-vOxkuQAcg"
+    description: "There is no communication between the machine and MDB payment system. Switch the machine off and on again."
+
+  - error_code: "E25"
+    error_name: "Flowmeter error"
+    youtubelink: "https://www.youtube.com/watch?v=6-vOxkuQAcg"
+    description: "No water pressure. Water tank is empty (if applicable). Check water pressure. Open the water supply. Check the water hose. Switch the machine off and on again."

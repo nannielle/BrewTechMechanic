@@ -56,6 +56,7 @@ coffee_machine_models.each do |model_name|
   CoffeeMachineModel.find_or_create_by!(name: model_name)
 end
 
+puts CoffeeMachineModel.pluck(:id)
 #coffee_machine_model_ids = CoffeeMachineModel.pluck(:id)
 
 # Seed data for managers
@@ -72,12 +73,10 @@ puts "Creating Coffee Machines"
 file_path = Rails.root.join('db', 'coffee_machines.yml')
 coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
 
-
 coffee_machines_data.each_with_index do |coffee_machine_data, i|
-
   coffee_machine = CoffeeMachine.new(
     # name: coffee_machine_data["name"],
-    coffee_machine_model_id: coffee_machine_data["coffee_machine_model_id"],
+    coffee_machine_model: CoffeeMachineModel.all[coffee_machine_data["coffee_machine_model_id"]],
     description: coffee_machine_data["description"],
     machine_type: coffee_machine_data["type"]
   )
@@ -85,48 +84,32 @@ coffee_machines_data.each_with_index do |coffee_machine_data, i|
   coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.png", content_type: "image/png")
 
   coffee_machine.save!
-
 end
 
+puts "Creating Error Messages"
+file_path = Rails.root.join('db', 'error_messages.yml')
+error_messages_data = YAML.load_file(file_path)["error_messages"]
 
-# 10.times do
-#   picture_url = Faker::LoremFlickr.image(size: '600x400', search_terms: ['coffee']) #
-#   tempfile = URI.open(picture_url)
-#   CoffeeMachine.create!(
-#     user_id: 1,
-#     photo: { io: tempfile, filename: File.basename(tempfile.path) },
-#     UniqueLoginCode: Faker::Code.unique.asin,
-#     serial_number: Faker::Alphanumeric.alphanumeric(number: 10),
-#     machine_type: "traditional",
-#     description: Faker::Lorem.paragraph,
-#     coffee_machine_model_id: coffee_machine_model_ids.sample
-#   )
-# end
-
-# # Seed data for coffee_machine_models
-# 5.times do
-#   CoffeeMachineModel.create(name: Faker::Name.name)
-# end
-
-# # Seed data for coffee_machines
-# 10.times do
-#   CoffeeMachine.create(
-#     UniqueLoginCode: Faker::Code.unique.asin,
-#     serial_number: Faker::Alphanumeric.alphanumeric(number: 10),
-#     description: Faker::Lorem.paragraph,
-#     user_id: User.pluck(:id).sample,
-#     coffee_machine_model_id: CoffeeMachineModel.pluck(:id).sample
-#   )
-# end
-
-# Seed data for errors
-10.times do
-  ErrorMessage.create(
-    textdescription: Faker::Lorem.sentence,
-    youtubelink: Faker::Internet.url,
+error_messages_data.each do |error_message_data|
+  error_message = ErrorMessage.new(
+    error_code: error_message_data["error_code"],
+    error_name: error_message_data["error_name"],
+    youtubelink: error_message_data["youtubelink"],
+    textdescription: error_message_data["description"],
     coffee_machine_model: CoffeeMachineModel.all.sample
   )
+  error_message.save!
 end
+
+
+# Seed data for errors
+# 10.times do
+#  ErrorMessage.create(
+#    textdescription: Faker::Lorem.sentence,
+#    youtubelink: Faker::Internet.url,
+#    coffee_machine_model: CoffeeMachineModel.all.sample
+#  )
+# end
 
 puts "Creating Questions and Answers"
 file_path = Rails.root.join('db', 'qa.yml')
@@ -136,6 +119,7 @@ questions_and_answers_data.each do |q_and_a|
   QuestionAndAnswer.find_or_create_by!(question: q_and_a['question'], answer: q_and_a['answer'], coffee_machine_model: CoffeeMachineModel.first)
 end
 
+puts "Creating reviews"
 # Seed data for reviews
 10.times do
   Review.create(

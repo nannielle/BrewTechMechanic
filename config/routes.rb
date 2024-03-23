@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :question_and_answers, only: [:index]
   resources :coffee_machines
+  resources :error_messages
   resources :user_coffee_machines, only: [:create]
 
   resource :profile, only: [:show, :edit, :update]
