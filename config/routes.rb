@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :error_messages
   resources :user_coffee_machines, only: [:create]
 
-  resources :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update]
 
   get 'my_coffeemachine', to: 'coffee_machines#my_coffeemachine'
 

@@ -76,7 +76,7 @@ coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
 coffee_machines_data.each_with_index do |coffee_machine_data, i|
   coffee_machine = CoffeeMachine.new(
     # name: coffee_machine_data["name"],
-    coffee_machine_model_id: coffee_machine_data["coffee_machine_model_id"],
+    coffee_machine_model: CoffeeMachineModel.all[coffee_machine_data["coffee_machine_model_id"]],
     description: coffee_machine_data["description"],
     machine_type: coffee_machine_data["type"]
   )
