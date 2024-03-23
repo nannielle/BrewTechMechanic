@@ -2,18 +2,17 @@
 <h1 class="mx-5 ">My Coffee Machines:</h1>
 
 <div class="container mt-4">
-<button class="btn btn-primary" data-action="click->toggle#change">Add coffee machine</button>
+  <button class="btn btn-primary" data-action="click->toggle#change">Add coffee machine</button>
 </div>
 <div style="margin:10%" class="d-none" data-toggle-target="form">
-<h4>You can add a coffee machine to your list
-by entering the code found on the back cover of your machine</h4>
+  <h4>You can add a coffee machine to your list by entering the code found on the back cover of your machine</h4>
 
-<%= simple_form_for @coffee_machine do |f| %>
-  <%= f.input :serial_number %>
-  <%= f.association :manager %>
-  <%= f.association :coffee_machine, label_method: lambda { |coffee_machine| "#{coffee_machine.coffee_machine_model.name}" } %>
-  <%= f.submit "Add a new coffee machine"%>
-<% end %>
+  <%= simple_form_for @coffee_machine do |f| %>
+    <%= f.input :serial_number %>
+    <%= f.association :manager %>
+    <%= f.association :coffee_machine, label_method: lambda { |coffee_machine| "#{coffee_machine.coffee_machine_model.name}" } %>
+    <%= f.submit "Add a new coffee machine"%>
+  <% end %>
 </div>
 
 <div class="container mt-5">
