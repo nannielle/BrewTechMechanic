@@ -25,6 +25,8 @@ color:$text-white !important;
 .modal-content{
   background-color: $login-modal-bb-content;
   margin-left: -13px;
+  border:none !important;
+  border-radius: 0 !important;
 }
 
 .form-control {

@@ -1,16 +1,37 @@
 
 
 
+<body class="landing-page-body">
+<% image_array = ["background-image-2.jpg" ,"background-image-1.jpg","background-image-3.jpg","background-image-4.jpg" ] %>
+<% text_array_top = ["Worldwide support" , ] %>
+<% text_array_bottom = ["for your coffee machine is here" , ] %>
+
+  <div class="slideshow-landingpage" data-controller="slideshow">
+<!-- Slide 1 content -->
+<% 4.times do |i| %>
+    <div class="slide-landingpage" data-slideshow-target="slide">
+        <%= image_tag "#{image_array[i]}",class: " slide-landingpage" %>
+        <div class="support-text-landingpage"><%= text_array_top[0] %><br> <%= text_array_bottom[0] %></div>
+    </div>
+  <% end %>
+<%#
+ <div class="button-container-landingpage">
+  <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="0"></span>
+  <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="1"></span>
+  <!-- Add more dots for additional slides -->
+</div>
+ %>
 
 
 
+        <div class="button-container-landingpage">
+          <% 4.times do |i| %>
+            <span class="dot-landingpage" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>"></span>
+          <% end %>
+        </div>
 
-<div class="homepage-slideshow">
 
 </div>
-
-
-
 
 
 
@@ -26,3 +47,4 @@
 <% else %>
 
 <% end %>
+</body>

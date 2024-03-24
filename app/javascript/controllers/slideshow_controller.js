@@ -9,6 +9,7 @@ export default class extends Controller {
     this.slideIndex = 0;
     this.showSlides();
   }
+  
 
   currentSlide(event) {
     this.showSlides(event.target.getAttribute("data-slide-index"));
