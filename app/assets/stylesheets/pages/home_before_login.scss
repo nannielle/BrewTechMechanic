@@ -30,11 +30,10 @@
   font-weight: 700;
   position: absolute;
   color:$red-orange;
-  top: 38vw;
+  top: 35vw;
   left: 10%;
   line-height: 1.2;
-  // background-color: rgba(0, 0, 0, 0.3);
-  padding: 40px;
+
 }
 .slideshow-container-landingpage {
   position: relative;
@@ -51,11 +50,11 @@
 
 .dot-landingpage {
 
-  height: 10px;
-  width: 10px;
+  height: 12px;
+  width: 12px;
   background-color:$text-white;
   border-radius: 50%;
   display: inline-block;
-  margin: 0 8px;
+  margin: 0 9px;
   cursor: pointer;
 }
