@@ -26,17 +26,6 @@ puts 'Cleaning users...'
 
 User.destroy_all
 
-puts 'Creating user...'
-User.create!(
-  #id: 1,
-  email: 'nina@gmail.com',
-  password: '123456',
-  first_name: 'Nina',
-  last_name: 'Asir',
-  address: 'Einsteinstrasse 3',
-  city: 'Berlin',
-  phone_number: '004911111111'
-)
 puts "Creating 10 fake Users"
 
 10.times.map do
@@ -60,18 +49,18 @@ puts CoffeeMachineModel.pluck(:id)
 #coffee_machine_model_ids = CoffeeMachineModel.pluck(:id)
 
 # Seed data for managers
-5.times do
-  Manager.create(
+Manager.create(
     region: Faker::Address.community,
     name: Faker::Name.name,
     phone_number: Faker::PhoneNumber.phone_number,
     email: Faker::Internet.email
   )
-end
 
 puts "Creating Coffee Machines"
 file_path = Rails.root.join('db', 'coffee_machines.yml')
 coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
+
+coffee_machine_photos = ["https://res.cloudinary.com/da6azjfr5/image/upload/v1711391356/m200_profile_redline_frontale_trasp_usodob.jpg"]
 
 coffee_machines_data.each_with_index do |coffee_machine_data, i|
   coffee_machine = CoffeeMachine.new(
@@ -80,8 +69,8 @@ coffee_machines_data.each_with_index do |coffee_machine_data, i|
     description: coffee_machine_data["description"],
     machine_type: coffee_machine_data["type"]
   )
-  file = URI.open("https://res.cloudinary.com/da6azjfr5/image/upload/v1711130324/m100_attiva_categoria_tradizionali_0_erlff4.png")
-  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.png", content_type: "image/png")
+  file = URI.open(coffee_machine_photos.sample)
+  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.jpg", content_type: "image/jpg")
 
   coffee_machine.save!
 end
@@ -102,15 +91,6 @@ error_messages_data.each do |error_message_data|
 end
 
 
-# Seed data for errors
-# 10.times do
-#  ErrorMessage.create(
-#    textdescription: Faker::Lorem.sentence,
-#    youtubelink: Faker::Internet.url,
-#    coffee_machine_model: CoffeeMachineModel.all.sample
-#  )
-# end
-
 puts "Creating Questions and Answers"
 file_path = Rails.root.join('db', 'qa.yml')
 questions_and_answers_data = YAML.load_file(file_path)
@@ -128,3 +108,29 @@ puts "Creating reviews"
     user_id: User.pluck(:id).sample
   )
 end
+
+
+
+
+
+#    puts 'Creating user...'
+#    User.create!(
+#      #id: 1,
+#      email: 'nina@gmail.com',
+#      password: '123456',
+#      first_name: 'Nina',
+#      last_name: 'Asir',
+#      address: 'Einsteinstrasse 3',
+#      city: 'Berlin',
+#      phone_number: '004911111111'
+#    )
+
+
+# Seed data for errors
+# 10.times do
+#  ErrorMessage.create(
+#    textdescription: Faker::Lorem.sentence,
+#    youtubelink: Faker::Internet.url,
+#    coffee_machine_model: CoffeeMachineModel.all.sample
+#  )
+# end
