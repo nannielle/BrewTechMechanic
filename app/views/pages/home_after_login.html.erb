@@ -2,19 +2,12 @@
 
 <div class="homepage-topimage-container">
   <%= image_tag "homepage_pic_1.png", alt:"Homepage Image", class:"homepage-image-top" %>
-
-
-
   <div data-controller="slideshow" class="homepage-slideshow ">
-
-
-    <div >
+ <div >
 
       <div  class="slideshow-container">
         <% 7.times do |i| %>
-
         <div class="line-and-dot-container">
-
           <div class="dot-container">
             <span class="number-in-dot"><%= i+1 %></span>
             <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>"></span>

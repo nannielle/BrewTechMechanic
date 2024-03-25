@@ -34,11 +34,12 @@
   // padding: 8px 20px;
   margin-right: 40px;
   min-width: 60px;
+  color:$text-white;
 }
 
 .nav-button-orange:hover{
-  background-color: $orange-hover;
-  color:$orange-button;
+  background-color: $orange-hover !important;
+  color:$orange-button !important;
   border-radius: 20px;
   // padding: 8px 20px;
   margin-right: 40px;
