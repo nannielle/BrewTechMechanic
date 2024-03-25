@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   get "/home_after_login" ,to: "pages#home_after_login", as: :home_after_login
 
-  resources :question_and_answers, only: [:index]
+  # resources :question_and_answers, only: [:index ]
+  resources :question_and_answers do
+    resources :reviews, only: [:create]
+  end
   resources :coffee_machines
   resources :error_messages
   resources :user_coffee_machines, only: [:create]
