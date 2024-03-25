@@ -1,0 +1,23 @@
+<div class="modal fade" id="reviewModal<%= question.id%>" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog ">
+    <div class="modal-size">
+
+
+    <div class="">
+      <div class="modal-content">
+        <% question.reviews.each do |review| %>
+        <p class="" style="font-size:24px;"><b><%= review.user.first_name %></b> : <%= review.content %></p>
+        <% end %>
+
+  <%= simple_form_for [question, Review.new] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Add a review"%>
+    <% end %>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
