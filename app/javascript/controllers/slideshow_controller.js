@@ -1,15 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="slideshow"
 export default class extends Controller {
-  // app/javascript/controllers/slideshow_controller.js
   static targets = ["slide", "dot"];
 
   connect() {
     this.slideIndex = 0;
     this.showSlides();
   }
-  
+
 
   currentSlide(event) {
     this.showSlides(event.target.getAttribute("data-slide-index"));
