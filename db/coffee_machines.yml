@@ -31,7 +31,7 @@ semiautomatic M21 Junior S) version."
   - name: "S60"
     type: "fully automatic"
     coffee_machine_model_id: 4
-    description: "The first fully automatic coffee machine with a look and feel of a traditional one:
+    description: "S60 is the first fully automatic coffee machine with a look and feel of a traditional one:
 LaCimbali traditional C side shape
 Lever control for manual steam wands in stainless steel material
 Elegant chrome hopper and chassis details
@@ -59,7 +59,7 @@ ease of use, and easy maintenance."
   - name: "S20 Fresh Brew"
     type: "fully automatic"
     coffee_machine_model_id: 7
-    description: "The new S20 FB allows you to select up to 2 different temperatures
+    description: "The new S20 Fresh Brew allows you to select up to 2 different temperatures
 to enjoy FRESH BREW however you prefer it.
 Enjoy a wide range of hot and iced coffee drinks in different sizes and flavours:
 12oz, 16oz, 20oz and 24oz.
