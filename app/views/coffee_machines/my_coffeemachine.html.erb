@@ -5,7 +5,7 @@
   <button class="btn btn-primary" data-action="click->toggle#change">Add coffee machine</button>
 </div>
 <div style="margin:10%" class="d-none" data-toggle-target="form">
-  <h4>You can add a coffee machine to your list by entering the code found on the back cover of your machine</h4>
+  <h4>You can add a coffee machine to your list by entering the SERIAL NUMBER found on the back cover of your machine</h4>
 
   <%= simple_form_for @coffee_machine do |f| %>
     <%= f.input :serial_number %>
@@ -26,7 +26,7 @@
                 <%= cl_image_tag coffee_machine.photo.key, class: "card-img-top", crop: :fill %>
               <% end %>
                           <div class="card-body">
-              <h5 class="card-title"><%= coffee_machine.machine_type %></h5>
+              <h5 class="card-title">Type of coffee machine: <%= coffee_machine.machine_type %></h5>
               <p class="card-text">Description: <%= coffee_machine.description %></p>
               <!-- Add other details if needed -->
             </div>

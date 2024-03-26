@@ -26,17 +26,6 @@ puts 'Cleaning users...'
 
 User.destroy_all
 
-puts 'Creating user...'
-User.create!(
-  #id: 1,
-  email: 'nina@gmail.com',
-  password: '123456',
-  first_name: 'Nina',
-  last_name: 'Asir',
-  address: 'Einsteinstrasse 3',
-  city: 'Berlin',
-  phone_number: '004911111111'
-)
 puts "Creating 10 fake Users"
 
 10.times.map do
@@ -51,7 +40,7 @@ puts "Creating 10 fake Users"
   )
 end
 
-coffee_machine_models = ["1", "2", "3", "4", "5", "6", "7", "8"]
+coffee_machine_models = ["M200", "M39RE", "M26", "M21 Junior", "S60", "S30", "S-Lite", "S20 Fresh Brew"]
 coffee_machine_models.each do |model_name|
   CoffeeMachineModel.find_or_create_by!(name: model_name)
 end
@@ -60,18 +49,26 @@ puts CoffeeMachineModel.pluck(:id)
 #coffee_machine_model_ids = CoffeeMachineModel.pluck(:id)
 
 # Seed data for managers
-5.times do
-  Manager.create(
+Manager.create(
     region: Faker::Address.community,
     name: Faker::Name.name,
     phone_number: Faker::PhoneNumber.phone_number,
     email: Faker::Internet.email
   )
-end
 
 puts "Creating Coffee Machines"
 file_path = Rails.root.join('db', 'coffee_machines.yml')
 coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
+
+coffee_machine_photos = [
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389952/s60.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390192/m26.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711455019/s20.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390100/m39re.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390155/m21junior.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389974/s30.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711391356/m200.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390063/s-lite.jpg"]
 
 coffee_machines_data.each_with_index do |coffee_machine_data, i|
   coffee_machine = CoffeeMachine.new(
@@ -80,11 +77,12 @@ coffee_machines_data.each_with_index do |coffee_machine_data, i|
     description: coffee_machine_data["description"],
     machine_type: coffee_machine_data["type"]
   )
-  file = URI.open("https://res.cloudinary.com/da6azjfr5/image/upload/v1711130324/m100_attiva_categoria_tradizionali_0_erlff4.png")
-  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.png", content_type: "image/png")
+  file = URI.open(coffee_machine_photos.sample)
+  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.jpg", content_type: "image/jpg")
 
   coffee_machine.save!
 end
+
 
 puts "Creating Error Messages"
 file_path = Rails.root.join('db', 'error_messages.yml')
@@ -101,15 +99,6 @@ error_messages_data.each do |error_message_data|
   error_message.save!
 end
 
-
-# Seed data for errors
-# 10.times do
-#  ErrorMessage.create(
-#    textdescription: Faker::Lorem.sentence,
-#    youtubelink: Faker::Internet.url,
-#    coffee_machine_model: CoffeeMachineModel.all.sample
-#  )
-# end
 
 puts "Creating Questions and Answers"
 file_path = Rails.root.join('db', 'qa.yml')
@@ -128,3 +117,29 @@ puts "Creating reviews"
     user_id: User.pluck(:id).sample
   )
 end
+
+
+
+
+
+#    puts 'Creating user...'
+#    User.create!(
+#      #id: 1,
+#      email: 'nina@gmail.com',
+#      password: '123456',
+#      first_name: 'Nina',
+#      last_name: 'Asir',
+#      address: 'Einsteinstrasse 3',
+#      city: 'Berlin',
+#      phone_number: '004911111111'
+#    )
+
+
+# Seed data for errors
+# 10.times do
+#  ErrorMessage.create(
+#    textdescription: Faker::Lorem.sentence,
+#    youtubelink: Faker::Internet.url,
+#    coffee_machine_model: CoffeeMachineModel.all.sample
+#  )
+# end
