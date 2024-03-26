@@ -60,7 +60,14 @@ puts "Creating Coffee Machines"
 file_path = Rails.root.join('db', 'coffee_machines.yml')
 coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
 
-coffee_machine_photos = ["https://res.cloudinary.com/da6azjfr5/image/upload/v1711391356/m200_profile_redline_frontale_trasp_usodob.jpg"]
+coffee_machine_photos = ["https://res.cloudinary.com/da6azjfr5/image/upload/v1711391356/m200_profile_redline_frontale_trasp_usodob.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390192/m23_up_2_gruppi_fronte_bianca_qgpbhh.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390155/m21junior_dt1_listino_no-sfondo-2_wxodms.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390100/m39_re_fronte_trasp-2_uez25f.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390063/7_s-lite_b_frontale_trasp_ebkerj.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389974/s30-cs10_jby4zz.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389952/immagine_gamma_s60_with_turbosteam-2_iufyjj.jpg",
+  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390333/m40_2_gruppi_bianca_frontale_trasp-2_vhdggd.jpg"]
 
 coffee_machines_data.each_with_index do |coffee_machine_data, i|
   coffee_machine = CoffeeMachine.new(
