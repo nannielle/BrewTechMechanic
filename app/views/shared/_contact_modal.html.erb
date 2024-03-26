@@ -13,7 +13,7 @@
       <div class="modal-body">
         <%= form_with(url: manufacture_contact_path, method: :post, local: true) do |form| %>
           <div class="mb-3">
-            <%= form.label :preferred_language, 'Please choose language you would like to use:' %>
+            <%= form.label :preferred_language, 'Please choose language you would like to use and ' %>
             <%= form.select :preferred_language, ['English', 'Spanish', 'German', 'Russian'], {}, {class: 'form-control', required: true} %>
           </div>
 

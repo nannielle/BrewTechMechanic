@@ -6,14 +6,10 @@
   position: relative;
 }
 
-
 .slide-landingpage {
   object-fit: cover;
-}
-
-.slide-landingpage img {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   filter: sepia(70%) brightness(40%)  !important;
 }
 

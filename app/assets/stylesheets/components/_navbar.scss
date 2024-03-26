@@ -1,14 +1,23 @@
 .navbar-top {
   position: fixed;
   top: 0;
-  left:300px !important;
+  // left:300px !important;
   z-index: 1;
-  min-width: 1000px;
+  width: 100vw;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.navbar-background {
+  background-color: $beige;
+}
+
+.navbar-transparent {
+  background-color: transparent;
 }
 
 .navbar-style {
   justify-content: space-between !important;
-
 }
 
 .navbar-style .navbar-collapse {
@@ -21,11 +30,11 @@
 .navbar-style .navbar-brand img {
   width: 140px;
 }
-.style-logo{
-  margin-top: -2px;
-  margin-left: -200px;
 
-}
+// .style-logo{
+//   margin-top: -2px;
+//   margin-left: -200px;
+// }
 
 
 .nav-button-orange{
