@@ -17,14 +17,13 @@
             <%= form.select :preferred_language, ['English', 'Spanish', 'German', 'Russian'], {}, {class: 'form-control', required: true} %>
           </div>
 
-          <div class="mb-3">
-             <%= form.label :start_time, 'Start Time:', data: { controller: 'flatpickr' } %>
-            <%= form.text_field :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } }, class: 'form-control' %>
+          <div class="mb-3" data-controller="flatpickr">
+            <%= form.label :start_time, 'Start Time:' %>
+            <%= form.text_field :start_time, data: { flatpickr_target: "startTime" }, class: 'form-control', required: true %>
 
-            <%= form.label :end_time, 'End Time:', data: { controller: 'flatpickr' } %>
-            <%= form.text_field :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } }, class: 'form-control' %>
+            <%= form.label :end_time, 'End Time:' %>
+            <%= form.text_field :end_time, data: { flatpickr_target: "endTime" }, class: 'form-control', required: true %>
           </div>
-
 
           <!--div class="mb-3">
             <%= form.label :contact_time, 'Please select the most suitable time for a call or to send a message:' %>
