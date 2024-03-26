@@ -25,7 +25,7 @@
 .nothing-found-search-QandA{
   text-align: center;
   font-size: 30px;
-  
+
 }
 .question-answer-QandA {
    align-items: center;
@@ -60,4 +60,14 @@
   border: 3px black solid;
   padding: 10px;
   margin-top: 10px;
+}
+
+
+
+// //////////////modal ////////////////
+
+.add-review-modal-QandA {
+  color:$text-white;
+  background-color: white;
+  display: inline-block;
 }
