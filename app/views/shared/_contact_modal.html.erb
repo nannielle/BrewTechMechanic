@@ -3,22 +3,33 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">We will be happy to assist you! Please fill out the form:</h5>
+        <h5 class="modal-title" id="contactModalLabel">Do you have a technical question about one of your coffee machines?
+         We will be happy to help you! Please fill out the form below</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
         <%= form_with(url: manufacture_contact_path, method: :post, local: true) do |form| %>
           <div class="mb-3">
-            <%= form.label :preferred_language, 'Preferred language:' %>
-            <%= form.text_field :preferred_language, class: 'form-control', required: true %>
+            <%= form.label :preferred_language, 'Please choose language you would like to use:' %>
+            <%= form.select :preferred_language, ['English', 'Spanish', 'German', 'Russian'], {}, {class: 'form-control', required: true} %>
           </div>
 
           <div class="mb-3">
+             <%= form.label :start_time, 'Start Time:', data: { controller: 'flatpickr' } %>
+            <%= form.text_field :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } }, class: 'form-control' %>
+
+            <%= form.label :end_time, 'End Time:', data: { controller: 'flatpickr' } %>
+            <%= form.text_field :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } }, class: 'form-control' %>
+          </div>
+
+
+          <!--div class="mb-3">
             <%= form.label :contact_time, 'Please select the most suitable time for a call or to send a message:' %>
             <%= form.datetime_select :contact_time, class: 'form-control', required: true %>
-          </div>
+          </div-->
 
           <div class="mb-3">
             <%= form.label :contact_method, 'Please choose social media for contact:' %>

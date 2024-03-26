@@ -60,29 +60,35 @@ puts "Creating Coffee Machines"
 file_path = Rails.root.join('db', 'coffee_machines.yml')
 coffee_machines_data = YAML.load_file(file_path)["coffee_machines"]
 
-coffee_machine_photos = [
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389952/s60.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390192/m26.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711455019/s20.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390100/m39re.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390155/m21junior.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389974/s30.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711391356/m200.jpg",
-  "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390063/s-lite.jpg"]
+# correlate name of the models with their pictures
+coffee_machine_photos = {
+    "M200" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711391356/m200.jpg",
+    "M39RE" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390100/m39re.jpg",
+    "M26" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390192/m26.jpg",
+    "M21 Junior" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390155/m21junior.jpg",
+    "S60" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389952/s60.jpg",
+    "S30" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711389974/s30.jpg",
+    "S-Lite" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711390063/s-lite.jpg",
+    "S20 Fresh Brew" => "https://res.cloudinary.com/da6azjfr5/image/upload/v1711455019/s20.jpg"
+}
+coffee_machines_data.each do |coffee_machine_data|
+  coffee_machine_model = CoffeeMachineModel.find_by(name: coffee_machine_data["name"])
+  next unless coffee_machine_model #skip if not found
 
-coffee_machines_data.each_with_index do |coffee_machine_data, i|
   coffee_machine = CoffeeMachine.new(
-    # name: coffee_machine_data["name"],
-    coffee_machine_model: CoffeeMachineModel.all[coffee_machine_data["coffee_machine_model_id"]],
+    coffee_machine_model: coffee_machine_model,
     description: coffee_machine_data["description"],
     machine_type: coffee_machine_data["type"]
   )
-  file = URI.open(coffee_machine_photos.sample)
-  coffee_machine.photo.attach(io: file, filename: "coffee_machine#{i}.jpg", content_type: "image/jpg")
+
+  photo_url = coffee_machine_photos[coffee_machine_data["name"]]
+  next unless photo_url
+
+  file = URI.open(photo_url)
+  coffee_machine.photo.attach(io: file, filename: "#{coffee_machine_data['name']}.jpg", content_type: "image/jpg")
 
   coffee_machine.save!
 end
-
 
 puts "Creating Error Messages"
 file_path = Rails.root.join('db', 'error_messages.yml')
