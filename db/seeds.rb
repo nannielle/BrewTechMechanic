@@ -40,7 +40,7 @@ puts "Creating 10 fake Users"
   )
 end
 
-coffee_machine_models = ["1", "2", "3", "4", "5", "6", "7", "8"]
+coffee_machine_models = ["M200", "M39RE", "M26", "M21 Junior", "S60", "S30", "S-Lite", "S20 Fresh Brew"]
 coffee_machine_models.each do |model_name|
   CoffeeMachineModel.find_or_create_by!(name: model_name)
 end

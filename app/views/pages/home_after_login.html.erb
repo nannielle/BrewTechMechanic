@@ -1,103 +1,87 @@
-<div>
 
 <div class="homepage-topimage-container">
   <%= image_tag "homepage_pic_1.png", alt:"Homepage Image", class:"homepage-image-top" %>
   <div data-controller="slideshow" class="homepage-slideshow ">
- <div >
-
-      <div  class="slideshow-container">
-        <% 7.times do |i| %>
+    <div class="slideshow-container">
+      <% 7.times do |i| %>
         <div class="line-and-dot-container">
           <div class="dot-container">
             <span class="number-in-dot"><%= i+1 %></span>
             <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>"></span>
           </div>
-          <% if i < 6   %>
-           <div class="line-slideshow"> </div>
-           <% end %>
-        </div>
-        <% end %>
 
-
-      <% text =["aaaaaaaa","bbbbbbbbbb" ,"cccccccccccc" ,"ddddddddddd" ,"eeeeeeeeeeeeeeeee" ,"ffffffffffffffffffff" ,"ggggggggggggggg"] %>
-      <% 7.times do |i| %>
-        <div class="mySlides fade" data-slideshow-target="slide">
-          <p class="text-slideshow"><%= "#{text[i]}" %></p>
-          <div class="text-slideshow">Caption Text <%= i + 1 %></div>
+          <% if i < 6 %>
+          <div class="line-slideshow"> </div>
+          <% end %>
         </div>
       <% end %>
-</div>
-    </div>
-    <br>
 
-
-  </div>
-
-</div>
-
-  <div class="gray-space ">
-    <div class="content row mx-5 ">
-      <div class="text-container col-md-7 ">
-        <div class="text">
-          Having trouble with your Coffee Machine?
-          <h3 style="text-align:center;" class="my-3"> <b>We want to help!</b></h3>
-          Your can read instructions or watch video</div>
-        </div>
-        <div class="button-container col-md-5 ">
-        <input type="text" placeholder=" please insert an error code" class=" mx-2">
-          <button class="btn">
-            submit
-          </button>
-        </div>
+        <% text =["Brewing Solutions, Anywhere, Anytime", "Espresso expertise at your service",
+                  "Global support, local care for your coffee machine", "Your coffee companion, supporting every sip",
+                  "From bean to machine: support that understands", "Wake up to world-class coffee machine support",
+                  "Your coffee never stops, because we care"] %>
+        <% 7.times do |i| %>
+          <div class="mySlides fade" data-slideshow-target="slide">
+            <p class="text-slideshow"><%= "#{text[i]}" %></p>
+              <div class="text-slideshow">Caption Text <%= i + 1 %></div>
+          </div>
+        <% end %>
     </div>
   </div>
-<div class="ask-question-space" style="text-align:center;">
-  <p>Do you have a question ?</p>
+</div>
+
+<div class="gray-space">
+  <div class="content row mx-5">
+    <div class="text-container col-md-7">
+      <div class="text">Having trouble with your Coffee Machine?
+        <h3 style="text-align:center;" class="my-3"><b>We want to help!</b></h3>
+        You can read instructions or watch video
+      </div>
+    </div>
+      <div class="button-container col-md-5">
+        <input type="text" placeholder="Error Code" class="mx-2">
+        <button class="btn">Submit</button>
+      </div>
+  </div>
+</div>
+
+<div class="ask-question-space" style="text-align:center;"><p>Do you have a question about coffee or coffee machine?</p>
   <div class="row mt-5">
-    <div class="col-md-4 ">
-        <div class="question-card">
-          <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
-            <ul>
-              <li class="mt-5">Can i feel long cups or Thermos?
-              </li>
-              <li class="mt-2">What temperature is good for tea water?
-              </li>
-            </ul>
-        </div>
+    <div class="col-md-4">
+      <div class="question-card">
+        <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
+          <ul>
+            <li class="mt-5">Can i feel long cups or thermoses in my coffee machine?</li>
+            <li class="mt-2">What temperature is good for tea water?</li>
+          </ul>
+      </div>
     </div>
-    <div class="col-md-4 " >
-    <div class="question-card">
+
+    <div class="col-md-4">
+      <div class="question-card">
         <%= image_tag "coffee_icon_1.png", alt: "icon Image", class: "img-fluid mt-4" %>
-        <ul>
-          <li class="mt-5">Do i need a filter?
-          </li>
-          <li class="mt-2">How many grams of coffee per cup?
-          </li>
-        </ul>
-        </div>
-    </div>
-      <div class="col-md-4">
-        <div class="question-card">
-
-          <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
-            <ul>
-              <li class="mt-5">Can i feel long cups or Thermos?
-              </li>
-              <li class="mt-2">What temperature is good for tea water?
-              </li>
-            </ul>
-        </div>
+          <ul>
+           <li class="mt-5">Do i need a filter for my coffee machine?</li>
+           <li class="mt-2">How many grams of coffee is recommended per cup?</li>
+          </ul>
       </div>
-
     </div>
-    <div class="button-container ">
-        <button class="btn">
-            <%= link_to "FIND YOUR ANSWERS HERE", question_and_answers_path, class: "nav-link" %>
-        </button>
+
+    <div class="col-md-4">
+      <div class="question-card">
+        <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
+          <ul>
+            <li class="mt-5">What voltage is needed for the coffee machine?</li>
+            <li class="mt-2">What should be the height of the bar counter for customers and for the barista?</li>
+          </ul>
       </div>
-</div>
+    </div>
 
+  </div>
 
-
-<!--button class="btn btn-primary mt-5">Please feel the form and we will contact you as soon as possible! </button-->
+  <div class="button-container ">
+    <button class="btn">
+      <%= link_to "FIND YOUR ANSWERS HERE", question_and_answers_path, class: "nav-link" %>
+    </button>
+  </div>
 </div>
