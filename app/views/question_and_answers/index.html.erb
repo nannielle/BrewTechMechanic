@@ -16,6 +16,11 @@
 
 
 <div class="flex-container ">
+<% if @questions.empty? %>
+<div class="nothing-found-search-QandA mt-4">
+   <p > nothing found with <b>"<%= params[:query] %>"</b></p>
+   </div>
+   <% else %>
   <ul>
     <% @questions.each do |question| %>
       <%= render "shared/revews_modal", question: question  %>
@@ -42,6 +47,8 @@
       </div>
     <% end %>
   </ul>
+
+   <% end %>
 </div>
 
 
