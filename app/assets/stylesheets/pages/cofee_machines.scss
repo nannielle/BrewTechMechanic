@@ -3,19 +3,62 @@
   background-color: $background-beige;
   padding-top: 10%;
 
-
 }
 .image-coffeemachines-container{
   // height: 80%;
   mix-blend-mode: multiply;
-  // border: none;
-  max-height: 300px;
+  border: none;
+  margin-top:-15%;
+  margin-bottom: 10%;
+  min-height: 15vw;
+  min-width: 15vw;
 }
 .image-coffeemachines{
   object-fit: cover;
   // margin-top: -10%;
+  min-height: 13vw;
+  min-width: 13vw;
+
 
 }
 .test{
   border: 2px solid black;
+}
+
+.coffee-machine-crad{
+  // border:2px solid black;
+  box-shadow: 0px 0px 12px 5px rgba(93, 52, 16, 0.31);
+  border-radius: 20px;
+
+}
+
+.card-body-coffeemachine h4{
+  font-size: 1.5vw;
+
+}
+.card-body-coffeemachine{
+  margin-left: 8%;
+  padding-left: 14%;
+  padding-top: 14%;
+
+}
+
+.cofeenachine-button-orange , .cofeenachine-button-orange:hover{
+  background-color: $orange-button;
+  border-radius: 20px;
+  // padding: 8px 20px;
+  margin-right: 40px;
+  min-width: 60px;
+  color:$text-white;
+  font-size: 0.9vw;
+}
+
+.cofeenachine-button-blue{
+  background-color: $text-white;
+  border-radius: 20px;
+  border: 2px solid $dark-brown;
+  color: $dark-brown !important;
+  // padding: 8px 20px;
+  font-size: 0.9vw;
+
 }
