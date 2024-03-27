@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; //WE NEED TO MAKE ALL FONTS THE SAME!!!
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -27,28 +27,23 @@ body::-webkit-scrollbar-thumb:hover {
   background:$gold;
 }
 .homepage-topimage-container {
-
   position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+
+.homepage-image-top{
   width: 100vw;
   height: 100vh;
-
-}
-.homepage-image-top{
-
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-
+  padding: -10px;
 }
-
-
 
 .homepage-slideshow  {
 
-
 }
-
-
 
 .slideshow-container {
   background-color: rgba(219, 101, 16, 0.4) !important;
@@ -61,22 +56,19 @@ body::-webkit-scrollbar-thumb:hover {
   padding-top: 30px;
   color : $text-white;
   backdrop-filter: blur(15px);
-
   /* Additional styling for the slideshow container */
 }
 
-
 /* Slideshow container */
 
-
 .mySlides {
-  transition: opacity 1.5s ease; /* Add a transition effect for opacity */
+  transition: opacity 1.0s ease; /* Add a transition effect for opacity */
 }
 
 /* Fade animation */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1.0s;
   animation-fill-mode: forwards; /* Keep the last keyframe state after the animation ends */
 }
 
@@ -86,21 +78,21 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-
-
 /* Caption text */
 .text-slideshow {
   color:$text-white;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  top: 70px;
+  // top: 90px;
   width: 100%;
 }
+
 .mySlides  div {
   top:140px !important;
   font-size: 20px;
 }
+
 .mySlides p {
   font-size: 45px;
 }
@@ -128,10 +120,9 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 0 5px;
   cursor: pointer;
   flex-direction: row;
-
 }
-.dot {
 
+.dot {
   height: 40px;
   width: 40px;
   margin: 0 2px;
@@ -141,23 +132,23 @@ body::-webkit-scrollbar-thumb:hover {
   display: inline-block;
   transition: background-color 0.6s ease;
   position: relative;
-
   text-align: center;
   justify-content: center;
 }
+
 .number-in-dot{
   position: absolute;
-
 }
+
 .active {
   background-color: $orange-button;
   border:none;
 }
+
 .dot:hover{
  background-color: $orange-button;
  opacity: 0.5;
  border: none;
-
 }
 
 .line-slideshow{
@@ -166,16 +157,6 @@ body::-webkit-scrollbar-thumb:hover {
   height: 7px;
   border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
 
 .gray-space {
   flex: 1;
@@ -195,12 +176,13 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: center;
   padding-top: 5%;
   font-weight: 700;
-
 }
+
 .text {
   font-size: 24px;
   color:$dark-brown !important;
 }
+
 .button-container {
   flex: 1; /* Take half of the space */
   display: flex;
@@ -209,30 +191,31 @@ body::-webkit-scrollbar-thumb:hover {
   margin-top:5%;
   font-size: 25px ;
 }
+
 .button-container button {
   max-height: 100%;
   max-width: 100%;
   background-color:$orange-button ;
   border-radius: 5px;
   font-size: 25px ;
-
-
 }
+
 .button-container button:hover{
   background-color: $orange-hover !important;
 }
+
 .button-container input{
   padding:5px;
   border-radius: 5px;
   background-color:$beige !important;
-border: 2px $orange-button solid;
-outline: none;
-color:$dark-brown;
+  border: 2px $orange-button solid;
+  outline: none;
+  color:$dark-brown;
 }
+
 .button-container input::placeholder{
   color: $dark-brown;
 }
-
 
 .ask-question-space{
   flex: 1; /* Take remaining space */
@@ -247,17 +230,19 @@ color:$dark-brown;
   border-radius: 10px;
   padding:10px;
 }
+
 .ask-question-space p{
   font-size: 40px;
 }
+
 .ask-question-space ul{
   margin-top: 2%;
   margin-right: 4%;
   list-style-type: none;
 }
+
 .img-fluid{
   width: 200px;
   height: 200px;
   border-radius: 5px;
-
 }

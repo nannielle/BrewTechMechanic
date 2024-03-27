@@ -116,17 +116,24 @@ end
 
 puts "Creating reviews"
 # Seed data for reviews
-10.times do
-  Review.create(
-    content: Faker::Lorem.paragraph,
+file_path = Rails.root.join('db', 'reviews.yml')
+reviews_data = YAML.load_file(file_path)
+
+reviews_data['reviews'].each do |review_data|
+  Review.find_or_create_by!(
+    content: review_data['review'],
     question_and_answer_id: QuestionAndAnswer.pluck(:id).sample,
     user_id: User.pluck(:id).sample
   )
 end
 
-
-
-
+# 10.times do
+#   Review.create(
+#     content: Faker::Lorem.paragraph,
+#     question_and_answer_id: QuestionAndAnswer.pluck(:id).sample,
+#     user_id: User.pluck(:id).sample
+#   )
+# end
 
 #    puts 'Creating user...'
 #    User.create!(

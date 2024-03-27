@@ -1,6 +1,6 @@
 
 <div class="homepage-topimage-container">
-  <%= image_tag "homepage_pic_1.png", alt:"Homepage Image", class:"homepage-image-top" %>
+  <%= image_tag "homepage_girl.png", alt:"Homepage Image", class:"homepage-image-top" %>
   <div data-controller="slideshow" class="homepage-slideshow ">
     <div class="slideshow-container">
       <% 7.times do |i| %>
@@ -17,13 +17,12 @@
       <% end %>
 
         <% text =["Brewing Solutions, Anywhere, Anytime", "Espresso expertise at your service",
-                  "Global support, local care for your coffee machine", "Your coffee companion, supporting every sip",
-                  "From bean to machine: support that understands", "Wake up to world-class coffee machine support",
-                  "Your coffee never stops, because we care"] %>
+                  "Your coffee companion, supporting every sip",
+                  "From bean to machine: support that understands", "Wake up to world-class coffee machine service",
+                  "Because we care, your coffee never stops", "Global support, local care for your coffee machine"] %>
         <% 7.times do |i| %>
           <div class="mySlides fade" data-slideshow-target="slide">
             <p class="text-slideshow"><%= "#{text[i]}" %></p>
-              <div class="text-slideshow">Caption Text <%= i + 1 %></div>
           </div>
         <% end %>
     </div>
