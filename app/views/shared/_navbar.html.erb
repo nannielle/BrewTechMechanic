@@ -1,17 +1,18 @@
+<% transparent_paths = ["/", "/home_after_login"] %>
+<% background =  transparent_paths.include?(request.path) ? "navbar-transparent" : "navbar-background" %>
+<div class="navbar-top <%= background %>">
 
-<div class="navbar-top ">
+  <div class="navbar navbar-expand-sm navbar-dark navbar-style">
 
-  <div class="navbar navbar-expand-sm navbar-dark navbar-style ">
-
-      <%= link_to  home_after_login_path	, class: "navbar-brand style-logo " do %>
+      <%= link_to  home_after_login_path	, class: "navbar-brand style-logo" do %>
         <%= image_tag "Rectangle 13(1).png" %>
       <% end %>
 
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in?%>
-            <li class="nav-item  mx-2 ">
-                <%= link_to 'Coffee Machines', coffee_machines_path ,class:" nav-link nav-button-blue" %>
+            <li class="nav-item mx-2 ">
+                <%= link_to 'Coffee Machines', coffee_machines_path ,class: "nav-link nav-button-blue" %>
 
             </li>
             <li class="nav-item mx-2">
@@ -21,7 +22,7 @@
 
              <%= link_to "Contact Manufacture", manufacture_contact_path, class: "nav-link nav-button-orange", data: { bs_toggle: "modal", bs_target: "#contactModal" } %>
             </li>
-            <li class="nav-item dropdown mx-2 ">
+            <li class="nav-item dropdown mx-2">
             <div class="nav-button-orange">
             <a href="#" class="avatar nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-action="click->dropdown#showMenu">
                <%= tag.i ' ', class: "fa-solid fa-user", alt: "dropdown menu" %>

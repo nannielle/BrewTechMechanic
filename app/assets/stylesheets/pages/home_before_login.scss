@@ -2,18 +2,14 @@
   overflow: hidden;
 }
 
-.slideshow-landingpage{
+.slideshow-landingpage {
   position: relative;
 }
 
-
 .slide-landingpage {
   object-fit: cover;
-}
-
-.slide-landingpage img {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   filter: sepia(70%) brightness(40%)  !important;
 }
 
@@ -22,26 +18,24 @@
   font-size: 55px;
   font-weight: 700;
   position: absolute;
-  color:$red-orange;
+  color: white;
   top: 35vw;
   left: 10%;
   line-height: 1.2;
 }
+
 .slideshow-container-landingpage {
   position: relative;
 }
 
 .button-container-landingpage {
-
   text-align: center;
   position: absolute;
   top: 48vw;
   width: 100%;
-
 }
 
 .dot-landingpage {
-
   height: 12px;
   width: 12px;
   background-color:$text-white;

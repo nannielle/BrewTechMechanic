@@ -6,20 +6,22 @@ color:$text-white !important;
 .left-login-modal{
   background-color: $login-modal-bg-left ;
 }
+
 .left-login-modal > i{
   margin: 13px !important;
   font-size: 1.5em !important;
-
 }
+
 .left-login-modal-content{
   margin-top: 20%;
 }
+
 .left-login-modal-content p{
   padding:0 10% ;
 }
+
 .left-login-modal-content i{
   font-size: 6em;
-
 }
 
 .modal-content{
@@ -52,14 +54,17 @@ color:$text-white !important;
   box-shadow: none; /* Remove any box shadow */
   outline: none;
 }
+
 .modal-header{
   border:none !important;
 }
+
 .submit-button{
   width: 100%;
   margin: 0 auto;
   background-color: $login-button-bg;
 }
+
 .submit-button:hover{
   background-color: $login-button-bg-hover;
   color: black;
