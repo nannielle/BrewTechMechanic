@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif; //WE NEED TO MAKE ALL FONTS THE SAME!!!
+  font-family: Arial, sans-serif !important;
   overflow-x: hidden;
   overflow-y: auto;
 }
