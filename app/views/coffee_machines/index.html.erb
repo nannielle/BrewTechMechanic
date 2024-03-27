@@ -1,50 +1,34 @@
 <div class="coffeemachines-container">
-
-
-
-
-  <h1>Coffee Machines</h1>
+<%# <div class="text-center">
+  <h1 class="coffee-machine-crad text-center"style="max-width:300px">Coffee Machines</h1>
+</div> %>
   <div class="row">
     <div class="col-2"></div>
-    <div class="col-9 ">
-    <div class="row ">
-      <% @coffee_machines.each do |coffee_machine|  %>
-
-
-        <%# <div class="col-4 mt-3 "> %>
-
-          <div class="col-3 mt-5">
-            <div class="card image-coffeemachines-container ">
-              <% if coffee_machine.photo.attached? %>
-                <%= cl_image_tag coffee_machine.photo.key, class: "image-coffeemachines ", crop: :fill %>
-              <% end %>
-            </div>
-            </div>
-            <div class="col-3 card-body mt-4 p-4">
-              <h3 class="card-title my-3 "> <%= coffee_machine.machine_type %>  </h3>
-              <h4 class="card-text"><%= coffee_machine.coffee_machine_model.name %></h4>
-              <%= link_to "View Details ", coffee_machine_path(coffee_machine),class: "btn btn-primary mb-2" %>
-
-              <div class="errorchoose-coffeemachine">
-                <div class="dropdown">
-                  <button class="btn nav-button-orange dropdown-toggle" type="button" id="errorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Choose Error
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="errorDropdown">
-                      <% @allerrors.each do |error| %>
-                        <% if error.coffee_machine_model_id == coffee_machine.coffee_machine_model_id %>
-                          <li><%= link_to error.error_code, error_message_path(error), class:"dropdown-item" %></li>
-                        <% end %>
-                      <% end %>
-                  </ul>
-                </div>
+    <div class="col-8 ">
+      <div class="row ">
+        <% @coffee_machines.each do |coffee_machine|  %>
+          <div class="col-lg-6 mt-4 ">
+          <div class="row coffee-machine-crad mx-5">
+            <div class="col-5 mt-5">
+              <div class="card image-coffeemachines-container ">
+                <% if coffee_machine.photo.attached? %>
+                  <%= cl_image_tag coffee_machine.photo.key, class: "image-coffeemachines ", crop: :fill %>
+                <% end %>
               </div>
             </div>
+            <div class="col-6 card-body mt-2 card-body-coffeemachine">
+              <h4 class="card-text "><%= coffee_machine.coffee_machine_model.name %></h4>
+              <div class="errorchoose-coffeemachine">
 
-        <%# </div> %>
-      <% end %>
+                 <%= render "shared/drowpdowns", coffee_machine:coffee_machine %>
+
+              </div>
+            </div>
+          </div>
+          </div>
+         <% end %>
+        </div>
       </div>
-      </div>
-    <div class="col-1"></div>
+    <div class="col-2"></div>
   </div>
 </div>
