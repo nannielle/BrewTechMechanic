@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
   resources :coffee_machines
-  resources :error_messages
+  resources :error_messages, only: [:show]
   resources :user_coffee_machines, only: [:create]
 
   resource :profile, only: [:show, :edit, :update]
