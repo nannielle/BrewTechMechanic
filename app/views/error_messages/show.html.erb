@@ -1,7 +1,10 @@
 
-<div class="container mt-5">
-  <h2>Error Code: <%= @error.error_code %></h2>
-  <h2>Error: <%= @error.error_name %></h2>
-  <p> Please do following:  <%= @error.textdescription %></p>
-  <iframe width="600" height="400" src="<%= @error.youtubelink .sub! '/watch?v=', '/embed/' %>" frameborder="0" allowfullscreen></iframe>
+<div class=" mt-5 error-container">
+  <div class="row error-show-card">
+    <h2>Error Code: <%= @error.error_code %></h2>
+    <h2 class="mb-5">Error: <%= @error.error_name %></h2>
+    <iframe class="col-7" width="600" height="400" src="<%= @error.youtubelink .sub! '/watch?v=', '/embed/' %>" frameborder="0" allowfullscreen></iframe>
+
+    <h4 class="col-5 p-4"><b> Please do following: </b> <%= @error.textdescription %></h4>
+  </div>
 </div>
