@@ -6,6 +6,22 @@ export default class extends Controller {
   connect() {
     this.slideIndex = 0;
     this.showSlides();
+    setInterval(()=>{
+    const activeEllement = this.slideTargets.filter(slide => getComputedStyle(slide).display == "block" )[0]
+    const nextIndex = parseInt(activeEllement.dataset.index , 10) + 1
+
+    activeEllement.style.display = "none"
+    if (nextIndex > 3){
+      this.slideTargets[0].style.display = "block"
+    }else {
+      this.slideTargets[nextIndex].style.display = "block"
+
+    }
+
+
+  }
+
+    ,8000)
   }
 
 
