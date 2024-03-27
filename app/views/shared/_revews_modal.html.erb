@@ -9,13 +9,21 @@
           <p class="" style="font-size:24px;"><b><%= review.user.first_name %></b> : <%= review.content %></p>
           <% end %>
 
-          <%= simple_form_for [question, Review.new] do |f| %>
-            <%= f.input :content %>
-            <%= f.submit "Add a review"%>
+      <div class="">
+        <div class="modal-content p-5">
+          <% question.reviews.each do |review| %>
+          <p class="" style="font-size:24px;"><b><%= review.user.first_name %></b> : <%= review.content %></p>
           <% end %>
-
+          <div class=" add-review-modal-QandA">
+            <%= simple_form_for [question, Review.new] do |f| %>
+              <div class="d-flex ">
+                <%= f.input :content,  input_html: { class: "form-control mr-2", style: "height: 20px; width: 500px;" } %>
+                <%= f.submit "Add a review" , class: "btn btn-primary ms-auto" %></div>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
+
   </div>
 </div>

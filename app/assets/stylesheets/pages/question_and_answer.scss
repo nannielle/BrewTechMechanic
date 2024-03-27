@@ -1,6 +1,7 @@
 .QandA-container{
   background-color: rgb(235, 226, 216);
   padding-top: 10%;
+  min-height : 1000px;
 }
 
 
@@ -21,6 +22,11 @@
   background-color:rgba(93, 52, 16, 0.15) ;
 }
 
+.nothing-found-search-QandA{
+  text-align: center;
+  font-size: 30px;
+
+}
 .question-answer-QandA {
    align-items: center;
   margin-top: -5%;
@@ -54,4 +60,14 @@
   border: 3px black solid;
   padding: 10px;
   margin-top: 10px;
+}
+
+
+
+// //////////////modal ////////////////
+
+.add-review-modal-QandA {
+  color:$text-white;
+  background-color: white;
+  display: inline-block;
 }
