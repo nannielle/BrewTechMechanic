@@ -7,11 +7,14 @@
         <div class="line-and-dot-container">
           <div class="dot-container">
             <span class="number-in-dot"><%= i+1 %></span>
-            <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>"></span>
+            <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>" ></span>
+
+
+
           </div>
 
           <% if i < 6 %>
-          <div class="line-slideshow"> </div>
+            <div class="line-slideshow"> </div>
           <% end %>
         </div>
       <% end %>
@@ -21,7 +24,7 @@
                   "From bean to machine: support that understands", "Wake up to world-class coffee machine service",
                   "Because we care, your coffee never stops", "Global support, local care for your coffee machine"] %>
         <% 7.times do |i| %>
-          <div class="mySlides fade" data-slideshow-target="slide">
+          <div class="mySlides fade" data-slideshow-target="slide" data-index="<%= i %>">
             <p class="text-slideshow"><%= "#{text[i]}" %></p>
           </div>
         <% end %>

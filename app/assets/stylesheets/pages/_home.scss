@@ -1,4 +1,4 @@
-// Specific CSS for your home-page
+          // Specific CSS for your home-page
 body {
   margin: 0;
   padding: 0;
@@ -8,21 +8,18 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 5px; /* Set the width of the scrollbar */
+  width: 5px;
 }
 
-/* Track (the area on which the thumb moves) */
 body::-webkit-scrollbar-track {
-  background: $beige; /* Set the background color */
+  background: $beige;
 }
 
-/* Handle (the draggable scrolling element) */
 body::-webkit-scrollbar-thumb {
   background: $dark-brown;
   border-radius: 5px;
 }
 
-/* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
   background:$gold;
 }
@@ -56,20 +53,17 @@ body::-webkit-scrollbar-thumb:hover {
   padding-top: 30px;
   color : $text-white;
   backdrop-filter: blur(15px);
-  /* Additional styling for the slideshow container */
 }
 
-/* Slideshow container */
 
 .mySlides {
-  transition: opacity 1.0s ease; /* Add a transition effect for opacity */
+  transition: opacity 1.0s ease;
 }
 
-/* Fade animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.0s;
-  animation-fill-mode: forwards; /* Keep the last keyframe state after the animation ends */
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade {
@@ -78,7 +72,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-/* Caption text */
 .text-slideshow {
   color:$text-white;
   font-size: 15px;
@@ -96,7 +89,6 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 45px;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color:$text-white;
   font-size: 12px;
