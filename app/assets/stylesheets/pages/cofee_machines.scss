@@ -16,8 +16,8 @@
 .image-coffeemachines{
   object-fit: cover;
   // margin-top: -10%;
-  min-height: 13vw;
-  min-width: 13vw;
+  min-height: 8vw;
+  min-width: 8vw;
 
 
 }
@@ -38,8 +38,8 @@
 }
 .card-body-coffeemachine{
   margin-left: 8%;
-  padding-left: 14%;
-  padding-top: 14%;
+  padding-left: 16%;
+  padding-top: 18%;
 
 }
 
@@ -53,12 +53,21 @@
   font-size: 0.9vw;
 }
 
-.cofeenachine-button-blue{
-  background-color: $text-white;
+.cofeenachine-button-blue,.cofeenachine-button-blue:hover{
+  background-color: $background-beige;
   border-radius: 20px;
   border: 2px solid $dark-brown;
   color: $dark-brown !important;
   // padding: 8px 20px;
   font-size: 0.9vw;
+
+}
+.details-cofeemachine-drowpdown{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: $background-beige;
+  border-radius: 10px;
+  border:2px solid $dark-brown;
+  min-width : 30vw;
+  padding: 2vw;
 
 }
