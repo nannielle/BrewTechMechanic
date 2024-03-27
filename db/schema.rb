@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_112218) do
     t.index ["coffee_machine_model_id"], name: "index_coffee_machines_on_coffee_machine_model_id"
   end
 
-  create_table "rror/rror", force: :cascade do |t|
+  create_table "error_messages", force: :cascade do |t|
     t.text "textdescription"
     t.string "youtubelink"
     t.bigint "coffee_machine_model_id", null: false

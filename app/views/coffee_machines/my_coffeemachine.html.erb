@@ -23,8 +23,8 @@
           <div class="card">
 
             <% if coffee_machine.photo.attached? %>
-                <%= cl_image_tag coffee_machine.photo.key, class: "card-img-top", crop: :fill %>
-              <% end %>
+              <%= cl_image_tag coffee_machine.photo.key, class: "card-img-top", crop: :fill %>
+            <% end %>
 
             <div class="card-body">
               <h5 class="card-title">Model:  <%= coffee_machine.coffee_machine_model.name %></h5>
