@@ -14,11 +14,6 @@
     </div>
   </div>
 
-<p><%= @questions %></p>
-<% @questions.each do |test| %>
-<p><%= test.question %></p>
-<% end %>
-
   <div class="flex-container ">
     <% if @questions.empty? %>
       <div class="nothing-found-search-QandA mt-4">
@@ -27,6 +22,7 @@
     <% else %>
       <ul>
         <% @questions.each do |question| %>
+          <%= render "shared/revews_modal", question: question %>
 
 
             <div class="row question-answer-QandA">
@@ -49,6 +45,7 @@
                 </div>
               </div>
           </div>
+
         <% end %>
     </ul>
 
@@ -58,4 +55,3 @@
 
 
 </div>
-          <%= render "shared/revews_modal", question: question%>
