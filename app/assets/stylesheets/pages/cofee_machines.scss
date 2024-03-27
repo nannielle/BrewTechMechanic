@@ -1,0 +1,21 @@
+
+.coffeemachines-container{
+  background-color: rgb(235, 226, 216);
+  padding-top: 10%;
+
+
+}
+.image-coffeemachines-container{
+  // height: 80%;
+  mix-blend-mode: multiply;
+  // border: none;
+  max-height: 300px;
+}
+.image-coffeemachines{
+  object-fit: cover;
+  // margin-top: -10%;
+
+}
+.test{
+  border: 2px solid black;
+}

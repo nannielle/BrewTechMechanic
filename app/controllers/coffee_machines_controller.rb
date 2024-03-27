@@ -1,6 +1,7 @@
 class CoffeeMachinesController < ApplicationController
   def index
     @coffee_machines = CoffeeMachine.all
+    @allerrors = ErrorMessage.all
   end
 
   def show

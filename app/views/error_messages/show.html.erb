@@ -1,0 +1,5 @@
+<div class="container mt-5">
+<h2><%= @error.error_code %></h2>
+<p><%= @error.textdescription %></p>
+<iframe width="560" height="315" src="<%= @error.youtubelink .sub! '/watch?v=', '/embed/' %>" frameborder="0" allowfullscreen></iframe>
+</div>
