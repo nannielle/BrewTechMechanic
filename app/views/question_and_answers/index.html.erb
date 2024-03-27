@@ -14,6 +14,10 @@
     </div>
   </div>
 
+<p><%= @questions %></p>
+<% @questions.each do |test| %>
+<p><%= test.question %></p>
+<% end %>
 
   <div class="flex-container ">
     <% if @questions.empty? %>
