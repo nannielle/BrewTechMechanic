@@ -1,9 +1,5 @@
 <div class="coffeemachines-container">
 
-<% @allerrors.each do |error| %>
-<p><%= error.error_code %></p>
-<% end %>
-
 
 
 
@@ -37,7 +33,7 @@
                   <ul class="dropdown-menu" aria-labelledby="errorDropdown">
                       <% @allerrors.each do |error| %>
                         <% if error.coffee_machine_model_id == coffee_machine.coffee_machine_model_id %>
-                          <li><%= link_to error.error_code, error_messages_path(error), class:"dropdown-item" %></li>
+                          <li><%= link_to error.error_code, error_message_path(error), class:"dropdown-item" %></li>
                         <% end %>
                       <% end %>
                   </ul>
