@@ -4,12 +4,6 @@
     <div class="modal-size">
 
       <div class="">
-        <div class="modal-content">
-          <% question.reviews.each do |review| %>
-          <p class="" style="font-size:24px;"><b><%= review.user.first_name %></b> : <%= review.content %></p>
-          <% end %>
-
-      <div class="">
         <div class="modal-content p-5">
           <% question.reviews.each do |review| %>
           <p class="" style="font-size:24px;"><b><%= review.user.first_name %></b> : <%= review.content %></p>

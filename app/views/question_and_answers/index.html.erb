@@ -7,6 +7,7 @@
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
+              style: "border:none;",
               placeholder: "Type a keyword"
           %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary m-1 rounded-4" %>
