@@ -23,15 +23,16 @@
     <% if @questions.empty? %>
       <div class="nothing-found-search-QandA mt-4">
         <p > nothing found with <b>"<%= params[:query] %>"</b></p>
-        </div>
-        <% else %>
-        <ul>
-          <% @questions.each do |question| %>
-            <%= render "shared/revews_modal", question: question  %>
+      </div>
+    <% else %>
+      <ul>
+        <% @questions.each do |question| %>
+
 
             <div class="row question-answer-QandA">
               <div class="col-2"></div>
               <div class="col-3 question-QandA">
+
                 <h3><%= highlight(question.question, params[:query],highlighter: '<em class="highlighter">\1</em>') %></h3>
 
               </div>
@@ -57,3 +58,4 @@
 
 
 </div>
+          <%= render "shared/revews_modal", question: question%>
