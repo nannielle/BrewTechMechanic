@@ -39,11 +39,10 @@
               <p><%= highlight(question.answer, params[:query],highlighter: '<em  class="highlighter">\1</em>') %></p>
 
                 <div class=" reply-icon-QandA text-center">
-                  <i class="fa-solid fa-reply" data-bs-toggle="modal" data-bs-target="#reviewModal<%=question.id%>"></i>
+                  <i class="fa-solid fa-reply" data-bs-toggle="modal" data-bs-target="#reviewModal<%= question.id %>"></i>
                   <span class="reply-count-QandA"><%= question.reviews.count %></span>
                 </div>
               </div>
-
           </div>
         <% end %>
     </ul>
