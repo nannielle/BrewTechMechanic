@@ -1,41 +1,47 @@
-<div class="my-coffeemachine" style="margin-top:10%" data-controller="toggle">
-<h1 class="mx-5">My Coffee Machines:</h1>
+<div class="my-coffeemachine" style="" data-controller="toggle">
+  <h1 class="mx-5">My Coffee Machines:</h1>
 
-<div class="container mt-4">
-  <button class="btn btn-primary" data-action="click->toggle#change">Add coffee machine</button>
-</div>
-<div style="margin:10%" class="d-none" data-toggle-target="form">
-  <h4>You can add a coffee machine to your list by entering the SERIAL NUMBER found on the back cover of your machine</h4>
+  <div class="text-center mt-4">
+    <button class="btn nav-button-orange" data-action="click->toggle#change">Add coffee machine</button>
+  </div>
 
-  <%= simple_form_for @coffee_machine do |f| %>
-    <%= f.input :serial_number %>
-    <%= f.association :manager %>
-    <%= f.association :coffee_machine, label_method: lambda { |coffee_machine| "#{coffee_machine.coffee_machine_model.name}" } %>
-    <%= f.submit "Add a new coffee machine"%>
-  <% end %>
-</div>
 
-<div class="container mt-5">
-  <% @user_coffeemachines.in_groups_of(3, false) do |group| %>
-    <div class="row">
-      <% group.compact.each do |coffee_machine| %>
-        <div class="col-md-4 mb-4">
-          <div class="card">
+  <div style="margin:5% 20%" class="d-none" data-toggle-target="form">
+  <div class="add-my-cofeemachine-form">
+  <div class="my-coffeemachine-add-form-border">
+    <h4>You can add a coffee machine to your list by entering the SERIAL NUMBER found on the back cover of your machine</h4>
+      <%= simple_form_for @coffee_machine do |f| %>
+        <%= f.input :serial_number %>
+        <%= f.association :manager %>
+        <%= f.association :coffee_machine, label_method: lambda { |coffee_machine| "#{coffee_machine.coffee_machine_model.name}" } %>
+        <%= f.submit "Add a new coffee machine" ,class:"btn nav-button-blue"%>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-            <% if coffee_machine.photo.attached? %>
-              <%= cl_image_tag coffee_machine.photo.key, class: "card-img-top", crop: :fill %>
-            <% end %>
+  <div class="container  mt-5">
+    <% @user_coffeemachines.in_groups_of(3, false) do |group| %>
+      <div class="row">
+        <% group.compact.each do |coffee_machine| %>
+          <div class="col-md-4 mb-4">
+            <div class="card my-coffeemachine-card">
+              <div class="image-my-coffeemachines-container">
+                  <% if coffee_machine.photo.attached? %>
+                    <%= cl_image_tag coffee_machine.photo.key, class: "card-img-top image-my-coffeemachines ", crop: :fill %>
+                  <% end %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Model:  <%= coffee_machine.coffee_machine_model.name %></h5>
+                <p class="card-subtitle mb-2 text-muted">Type of coffee machine: <%= coffee_machine.machine_type %></p>
+                <p class="card-text">Description: <%= coffee_machine.description %></p>
+              </div>
 
-            <div class="card-body">
-              <h5 class="card-title">Model:  <%= coffee_machine.coffee_machine_model.name %></h5>
-              <p class="card-subtitle mb-2 text-muted">Type of coffee machine: <%= coffee_machine.machine_type %></p>
-              <p class="card-text">Description: <%= coffee_machine.description %></p>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
 </div>

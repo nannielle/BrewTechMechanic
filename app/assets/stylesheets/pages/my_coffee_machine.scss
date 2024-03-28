@@ -1,4 +1,38 @@
+.my-coffeemachine-card {
+  background-color: $background-beige;
+  box-shadow: 0px 0px 12px 5px rgba(93, 52, 16, 0.31);
+
+}
+.image-my-coffeemachines-container{
+  mix-blend-mode: multiply;
+  border: none;
+  text-align: center;
+
+}
+
+// .image-my-coffeemachines{
+
+
+// }
+
 .my-coffeemachine{
   padding-top: 10%;
-  background-color: rgb(237, 254, 255);
+  background-color: $background-beige;
+}
+
+.add-my-cofeemachine-form{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: $background-beige;
+  border-radius: 10px;
+  min-width : 30vw;
+  padding: 1%;
+
+}
+
+.my-coffeemachine-add-form-border{
+  border:2px solid $dark-brown;
+
+border-radius: 10px;
+padding: 2%;
+
 }
