@@ -3,12 +3,12 @@
   <h1 class="coffee-machine-crad text-center"style="max-width:300px">Coffee Machines</h1>
 </div> %>
   <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8 ">
+    <div class="col-1"></div>
+    <div class="col-10 ">
       <div class="row ">
         <% @coffee_machines.each do |coffee_machine|  %>
-          <div class="col-lg-6 mt-4 ">
-          <div class="row coffee-machine-crad mx-5">
+          <div class="col-lg-4 mt-4 ">
+          <div class="row coffee-machine-crad mx-2">
             <div class="col-5 mt-5">
               <div class="card image-coffeemachines-container ">
                 <% if coffee_machine.photo.attached? %>

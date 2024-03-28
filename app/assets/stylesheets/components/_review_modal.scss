@@ -1,0 +1,15 @@
+.modal-review-background{
+  background-color: gray important;
+
+}
+.modal-review-container{
+  background-color : $background-beige !important;
+  color: black;
+  border-radius: 20px;
+
+}
+.modal-review-eachreview{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  padding :2%;
+  border-radius: 20px;
+}
