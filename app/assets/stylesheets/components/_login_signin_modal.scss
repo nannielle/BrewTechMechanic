@@ -44,7 +44,6 @@ color:$text-white !important;
   font-size: 0.8rem;
 }
 
-/* Style the input label when it's floating */
 .form-floating input:focus~label,  .form-control:focus {
   border-bottom: 1px solid transparent;
   border: none; /* Remove the border */
