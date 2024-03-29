@@ -5,16 +5,18 @@
 
       <div class="">
         <div class="modal-content   modal-review-container p-5 ">
+
+        
           <% question.reviews.each do |review| %>
           <div class="modal-review-eachreview m-2">
-            <p  style="font-size:24px;"><b class="name-review-modal"><%= review.user.first_name %></b> : <%= review.content %></p>
+            <p  style="font-size:24px;"><b class="name-review-modal"><%= review.user.first_name ? review.user.first_name : "no name" %></b> : <%= review.content %></p>
           </div>
           <% end %>
           <div class="">
             <%= simple_form_for [question, Review.new] do |f| %>
               <div class="d-flex add-review-modal-QandA mt-5">
-                <%= f.input :content,  input_html: { class: "form-control mr-2", style: " margin-top: -54px; height: 20px; width: 400px; color:white; margin-left:80px; margin-right:10% ;"  } %>
-                <%= f.submit "Add a review" , class: "btn nav-button-orange ms-auto" %></div>
+                <%= f.input :content,  input_html: { class: "form-control mr-2 input-review-modal" } ,label:false %>
+                <%= f.submit "Add a review" , class: "btn add-review-modal-button  ms-auto" %></div>
               </div>
             <% end %>
           </div>

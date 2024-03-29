@@ -1,3 +1,20 @@
 .modal-contact{
   background-color: $beige !important;
+padding:3%;
+border-radius: 20px !important;
 }
+.contact-modal-box{
+padding :2%;
+border: 2px solid $dark-brown;
+border-radius: 20px;
+}
+.contact-send-button ,.contact-send-button:hover{
+  background-color: $dark-brown;
+  border-radius: 5px;
+  color: $text-white;
+}
+.header-modal-contact{
+   float: right !important;
+
+}
+

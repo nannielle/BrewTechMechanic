@@ -5,26 +5,46 @@
 .modal-review-container{
   background-color : $background-beige !important;
   color: black;
-  border-radius: 20px;
+  border-radius: 20px !important;
+  margin-left: -10vw;
 
+  width: 150% !important;
 }
 
 .modal-review-eachreview{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   padding :3%;
   border-radius: 20px;
+
 }
-.name-review-modal{
-background-color:$red-orange;
-padding: 20px 10px;
-height: 50px;
-width: 50px;
-border-radius: 50%;
-color: white;
-}
+// .name-review-modal{
+
+// }
 
 .add-review-modal-QandA{
-  max-height: 40px;
-  margin-right: 0 ;
+  max-height: 45px;
+  margin-left: 5% ;
 
 }
+.add-review-modal-QandA {
+  color:$text-white;
+  background-color: white;
+  display: inline-block;
+  border-radius: 30px;
+  width:90%;
+}
+.add-review-modal-button ,.add-review-modal-button:hover{
+  background-color: $dark-brown;
+  color:$text-white;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.input-review-modal{
+  height: 20px;
+  width: 400px;
+  color:white;
+  margin-top:-8px;
+  margin-left: 10px;
+  border:none ;
+  overflow: hidden;
+  }
