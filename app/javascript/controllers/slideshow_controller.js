@@ -7,6 +7,8 @@ export default class extends Controller {
     this.slideIndex = 0;
     this.showSlides();
 
+    const numSlides = this.slideTargets.length;
+
     setInterval(()=>{
     const activeEllement = this.slideTargets.filter(slide => getComputedStyle(slide).display == "block" )[0]
     const nextIndex = parseInt(activeEllement.dataset.index , 10) + 1
@@ -15,13 +17,18 @@ export default class extends Controller {
       this.slideTargets[0].style.display = "block"
       this.dotTargets.forEach(dot => dot.classList.remove("active"));
       this.dotTargets[0].classList.add("active");
+
     }else {
       this.slideTargets[nextIndex].style.display = "block"
       this.dotTargets.forEach(dot => dot.classList.remove("active"));
       this.dotTargets[nextIndex].classList.add("active");
+
+
     }
+
   }
-    ,4000)
+
+    ,7000)
   }
 
 
