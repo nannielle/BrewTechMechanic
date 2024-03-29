@@ -42,9 +42,17 @@
   answer: "Our machines operate at 220 V. Please consult a professional electrician who will check the grounding and correctly connect your coffee machine."
 
 - question: "Can high cups for takeaway coffee or thermoses be used?"
-  answer: |
-    In automatic coffee machines, you can manually adjust the height by moving the coffee output block up or down.
+  answer: "In automatic coffee machines, you can manually adjust the height by moving the coffee output block up or down.
 
     The height of the pour on traditional coffee machines cannot be adjusted,
 
-    but you can always prepare coffee separately in a cup and pour it into a high glass or thermos.
+    but you can always prepare coffee separately in a cup and pour it into a high glass or thermos."
+- question: "How does a coffee machine fix itself after a breakdown?"
+  answer: "It brews a strong cup, takes a deep breath of roasted aroma, and remembers: a little TLC and maybe a screwdriver are all it needs for a perk-up!"
+
+
+- question: "How do you troubleshoot a coffee machine with a clog?"
+  answer: "First, clean the filter thoroughly. If the problem persists, try running a vinegar solution through the machine. Still stuck? Seek professional help or embrace the 'percussive maintenance' technique: give it a gentle tap!"
+
+-question: "Does it matter if the coffee machine faces the customer, or should it just wing it?"
+  answer: "Well, if the machine wants to impress with its coffee skills, it better face the crowd and flaunt its brewing charm. Plus, it's like a dance floor for baristas and machines, grinding side by side, with a safe 30 cm space for fire extinguishing boogies!"

@@ -3,14 +3,14 @@
 
 <body class="landing-page-body">
 <% image_array = ["background-image-2.jpg" ,"background-image-1.jpg","background-image-3.jpg","background-image-4.jpg" ] %>
-<% text_array_top = ["Worldwide support" , ] %>
-<% text_array_bottom = ["for your coffee machine is here" , ] %>
+<% text_array_top = ["Worldwide support" , "Global assistance"," Everything about","We work for you, "] %>
+<% text_array_bottom = ["for your coffee machine is here" ,"for your coffee machine","your coffee machine at your fingerprints","so you can just relax and brew" ] %>
 
   <div class="slideshow-landingpage" data-controller="slideshow">
     <% 4.times do |i| %>
         <div class="" data-slideshow-target="slide" data-index="<%= i %>">
             <%= image_tag "#{image_array[i]}", class: "slide-landingpage" %>
-            <div class="support-text-landingpage"><%= text_array_top[0] %><br> <%= text_array_bottom[0] %></div>
+            <div class="support-text-landingpage"><%= text_array_top[i] %><br> <%= text_array_bottom[i] %></div>
         </div>
       <% end %>
       <div class="button-container-landingpage">
