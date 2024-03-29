@@ -1,7 +1,7 @@
 class SupportController < ApplicationController
 
   def create
-    redirect_to root_path, notice: 'We will contact you as soon as possible!'
+    redirect_to home_after_login_path, notice: 'We will contact you as soon as possible!'
     # Logic to handle form submission
     # For example, send an email or save the contact inquiry
   end

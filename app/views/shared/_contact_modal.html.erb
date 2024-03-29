@@ -35,7 +35,8 @@
             </div>
 
             <div class="modal-footer">
-              <%= form.submit "Send", class: 'btn contact-send-button' %>
+              <%= form.submit "Send", class: 'btn contact-send-button'  %>
+              <%= link_to "Send" , home_after_login_path  %>
             </div>
           <% end %>
         </div>

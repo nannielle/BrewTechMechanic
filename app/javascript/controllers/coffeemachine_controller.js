@@ -16,4 +16,11 @@ export default class extends Controller {
     this.readMoreTargets[index].style.display = "none";
 
   }
+  unfire(event){
+    const index = event.target.dataset.coffeemachineTarget;
+    console.log(index);
+    this.descriptionTargets[index].style.display= "none";
+    this.readMoreTargets[index].style.display = "block";
+
+  }
 }
