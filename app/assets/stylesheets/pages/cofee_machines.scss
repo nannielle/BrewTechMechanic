@@ -5,8 +5,8 @@ body{
 .coffeemachines-container{
   background-color: $background-beige;
   padding-top: 10%;
-
 }
+
 .image-coffeemachines-container{
   // height: 80%;
   mix-blend-mode: multiply;
@@ -16,19 +16,19 @@ body{
   min-height: 15vw;
   min-width: 15vw;
 }
+
 .image-coffeemachines{
   object-fit: cover;
   // margin-top: -10%;
   min-height: 8vw;
   min-width: 8vw;
-
-
 }
+
 .test{
   border: 2px solid black;
 }
 
-.coffee-machine-crad{
+.coffee-machine-card {
   // border:2px solid black;
   box-shadow: 0px 0px 12px 5px rgba(93, 52, 16, 0.31);
   border-radius: 20px;
@@ -46,7 +46,7 @@ body{
 
 }
 
-.cofeenachine-button-orange , .cofeenachine-button-orange:hover{
+.cofeenachine-button-orange , .cofeenachine-button-orange:hover{// here name of the buttons are weird
   background-color: $orange-button;
   border-radius: 20px;
   // padding: 8px 20px;
@@ -75,8 +75,6 @@ body{
 }
 
 .coffeemachine-card-border{
-  border:2px solid $dark-brown;
-
-border-radius: 10px;
-
+ border:2px solid $dark-brown;
+ border-radius: 10px;
 }

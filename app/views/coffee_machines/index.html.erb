@@ -1,14 +1,14 @@
 <div class="coffeemachines-container">
-<%# <div class="text-center">
-  <h1 class="coffee-machine-crad text-center"style="max-width:300px">Coffee Machines</h1>
-</div> %>
+<div class="coffee-machine text-center">
+  <h2>Here you can see all information about our Coffee Machines:</h2>
+</div>
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10 ">
       <div class="row ">
         <% @coffee_machines.each do |coffee_machine|  %>
           <div class="col-lg-4 mt-4 ">
-          <div class="row coffee-machine-crad mx-2">
+          <div class="row coffee-machine-card mx-2">
             <div class="col-5 mt-5">
               <div class="card image-coffeemachines-container ">
                 <% if coffee_machine.photo.attached? %>

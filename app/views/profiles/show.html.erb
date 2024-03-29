@@ -1,8 +1,13 @@
-<div class="profile-container" style="padding-top:10%; ">
- <p><i class="fa-solid fa-user"></i> Name: <%= "#{@user.first_name} #{@user.last_name}"%></p>
- <p><i class="fa-regular fa-envelope"></i> Email: <%= @user.email %></p>
- <p><i class="fa-solid fa-location-dot"></i> Address: <%= @user.address %></p>
- <p><i class="fa-solid fa-phone"></i> Phone Number: <%= @user.phone_number %></p>
- <p><i class="fa-solid fa-location-pin-lock"></i> Profile: <%= "Public" %></p>
- <i class="fa-solid fa-pen-to-square"></i> <%= link_to 'Edit Profile', edit_profile_path %>
+<div class="card-profile-container">
+  <h2>Your profile:</h2>
+    <div class="col-lg-6 mt-1 center">
+      <div class="profile-container">
+        <p><i class="fa-solid fa-user"></i>  Name:  <%= "#{@user.first_name} #{@user.last_name}"%></p>
+        <p><i class="fa-regular fa-envelope"></i>  Email:  <%= @user.email %></p>
+        <p><i class="fa-solid fa-location-dot"></i>  Address:  <%= @user.address %></p>
+        <p><i class="fa-solid fa-phone"></i>  Phone Number: <%= @user.phone_number %></p>
+        <p><i class="fa-solid fa-location-pin-lock"></i>  Profile: <%= "Public" %></p>
+        <i class="fa-solid fa-pen-to-square"></i> <%= link_to 'Edit Profile', edit_profile_path %>
+      </div>
+    </div>
 </div>

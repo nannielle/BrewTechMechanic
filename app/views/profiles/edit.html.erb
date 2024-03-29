@@ -1,11 +1,10 @@
-<div class="container" style="margin-top:10%">
-  <h1>Edit Profile</h1>
+<div class="edit-profile-container" style="padding-top:10%;">
+  <h2>Edit your profile:</h2>
 
   <%= form_for @user, url: profile_path(@user), method: :patch do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
         <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -16,33 +15,31 @@
 
     <div class="field">
       <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, class: "profile-form-input" %>
     </div>
 
     <div class="field">
       <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, class: "profile-form-input" %>
     </div>
 
     <div class="field">
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class: "profile-form-input" %>
     </div>
 
     <div class="field">
       <%= f.label :address %>
-      <%= f.text_field :address %>
+      <%= f.text_field :address, class: "profile-form-input" %>
     </div>
 
     <div class="field">
       <%= f.label :phone_number, 'Phone Number' %>
-      <%= f.telephone_field :phone_number %>
+      <%= f.telephone_field :phone_number, class: "profile-form-input" %>
     </div>
 
-    <!-- Ensure your User model accepts :address as an attribute if it's not already done -->
-
     <div class="actions">
-      <%= f.submit "Update" %>
+      <%= f.submit "Update", class: "profile-form-submit" %>
     </div>
   <% end %>
 </div>

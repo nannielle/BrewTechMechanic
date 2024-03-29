@@ -1,0 +1,45 @@
+.edit-profile-container {
+  background-color: $background-beige;
+  text-align: center;
+  padding-top: 10%;
+  font-size: 1.5vw;
+  //padding: 5% 10%;
+}
+
+html, body {
+  height: 100%;
+  background-color: $background-beige;
+  font-family: "Nunito" !important;
+}
+
+.field {
+  background-color: $background-beige;
+  margin-bottom: 20px;
+}
+
+.profile-form-input {
+  padding: 10px;
+  width: 40%; /* Adjust the width as needed */
+  margin: 0 auto; /* This will center the input if it's displayed as block */
+  display: block; /* This makes the margin auto work for centering */
+  border: 1px solid #ccc; /* Example border */
+  border-radius: 20px; /* Rounded corners */
+  text-align: center;
+  box-shadow: 0px 0px 12px 5px rgba(93, 52, 16, 0.31);
+}
+
+/* Styling for the submit button */
+.profile-form-submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: $orange; /* Example button color */
+  color: white;
+  cursor: pointer;
+}
+
+/* You can also style the label for consistency */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
