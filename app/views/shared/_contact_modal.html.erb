@@ -1,4 +1,4 @@
-<!-- Contact Modal -->
+
 <div class="modal fade modal-review-background" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
   <div class="modal-dialog " role="document">
     <div class="modal-content modal-contact ">
@@ -23,11 +23,6 @@
               <%= form.label :end_time, 'End Time:' %>
               <%= form.text_field :end_time, data: { flatpickr_target: "endTime" }, class: 'form-control', required: true %>
             </div>
-
-            <!--div class="mb-3">
-              <%= form.label :contact_time, 'Please select the most suitable time for a call or to send a message:' %>
-              <%= form.datetime_select :contact_time, class: 'form-control', required: true %>
-            </div-->
 
             <div class="mb-3">
               <%= form.label :contact_method, 'Please choose social media for contact:' %>

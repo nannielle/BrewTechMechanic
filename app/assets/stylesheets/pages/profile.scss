@@ -1,4 +1,4 @@
-.card-profile-container{
+.card-profile-container {
   background-color: $background-beige;
   height: 100vh;
 }
@@ -16,4 +16,12 @@ body {
  margin-left: 12%;
  padding-left: 12%;
  font-size: 1.5vw;
+}
+
+.profile-container h2 {
+  margin: 6% 0;
+}
+
+.profile-container a {
+  color: $orange-button;
 }
