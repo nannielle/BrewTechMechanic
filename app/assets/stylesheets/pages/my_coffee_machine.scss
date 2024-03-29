@@ -37,3 +37,17 @@ border-radius: 10px;
 padding: 2%;
 
 }
+
+.description-all{
+  display: none;
+}
+.description-truncuate{
+  display:block;
+}
+.description-truncuate > span{
+  color:$orange-button !important;
+
+}
+.description-truncuate > span:hover{
+cursor: pointer;
+}

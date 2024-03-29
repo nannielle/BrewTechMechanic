@@ -14,7 +14,7 @@ class CoffeeMachinesController < ApplicationController
     @coffee_machine = UserCoffeeMachine.new
   end
 
-  
+
 
   def create
     @coffee_machine = current_user.coffee_machines.build(coffee_machine_params)
