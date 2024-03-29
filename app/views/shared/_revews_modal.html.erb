@@ -7,7 +7,7 @@
         <div class="modal-content   modal-review-container p-5 ">
           <% question.reviews.each do |review| %>
           <div class="modal-review-eachreview m-2">
-            <p class="" style="font-size:24px;"><b><%= review.user.first_name %></b> : <%= review.content %></p>
+            <p  style="font-size:24px;"><b class="name-review-modal"><%= review.user.first_name %></b> : <%= review.content %></p>
           </div>
           <% end %>
           <div class="">
