@@ -1,21 +1,30 @@
 .modal-review-background{
-  background-color: gray important;
-
+  background-color: $dark-brown !important;
 }
+
 .modal-review-container{
   background-color : $background-beige !important;
   color: black;
   border-radius: 20px;
 
 }
+
 .modal-review-eachreview{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
-  padding :2%;
+  padding :3%;
   border-radius: 20px;
 }
+.name-review-modal{
+background-color:$red-orange;
+padding: 20px 10px;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+color: white;
+}
+
 .add-review-modal-QandA{
   max-height: 40px;
   margin-right: 0 ;
 
 }
-
