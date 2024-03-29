@@ -1,6 +1,11 @@
-.modal-size{
+.modal-login-background{
+  background-color: $background-beige;
+}
+.modal-size-login{
   width: 150% !important;
 color:$text-white !important;
+margin-left: -20%;
+margin-top: 25vh;
 }
 
 .left-login-modal{
@@ -29,6 +34,8 @@ color:$text-white !important;
   margin-left: -13px;
   border:none !important;
   border-radius: 0 !important;
+
+
 }
 
 .form-control {

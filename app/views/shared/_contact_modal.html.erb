@@ -1,49 +1,49 @@
 <!-- Contact Modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal-contact">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Do you have a technical question about one of your coffee machines?
-         We will be happy to help you! Please fill out the form below</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+<div class="modal fade modal-review-background" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modal-contact ">
+      <div class="contact-modal-box">
 
-      <div class="modal-body">
-        <%= form_with(url: manufacture_contact_path, method: :post, local: true) do |form| %>
-          <div class="mb-3">
-            <%= form.label :preferred_language, 'Please choose language you would like to use and ' %>
-            <%= form.select :preferred_language, ['English', 'Spanish', 'German', 'Russian'], {}, {class: 'form-control', required: true} %>
-          </div>
+        <div class="modal-header ">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           <h5 class="modal-title my-4" id="contactModalLabel">Do you have a technical question about one of your coffee machines?
+          We will be happy to help you! Please fill out the form below:</h5>
+          <%= form_with(url: manufacture_contact_path, method: :post, local: true) do |form| %>
+            <div class="mb-3">
+              <%= form.label :preferred_language, 'Please choose language you would like to use  ' %>
+              <%= form.select :preferred_language, ['English', 'Spanish', 'German', 'Russian'], {}, {class: 'form-control', required: true} %>
+            </div>
 
-          <div class="mb-3" data-controller="flatpickr">
-            <%= form.label :start_time, 'Start Time:' %>
-            <%= form.text_field :start_time, data: { flatpickr_target: "startTime" }, class: 'form-control', required: true %>
+            <div class="mb-3" data-controller="flatpickr">
+              <%= form.label :start_time, 'Start Time:' %>
+              <%= form.text_field :start_time, data: { flatpickr_target: "startTime" }, class: 'form-control', required: true %>
 
-            <%= form.label :end_time, 'End Time:' %>
-            <%= form.text_field :end_time, data: { flatpickr_target: "endTime" }, class: 'form-control', required: true %>
-          </div>
+              <%= form.label :end_time, 'End Time:' %>
+              <%= form.text_field :end_time, data: { flatpickr_target: "endTime" }, class: 'form-control', required: true %>
+            </div>
 
-          <!--div class="mb-3">
-            <%= form.label :contact_time, 'Please select the most suitable time for a call or to send a message:' %>
-            <%= form.datetime_select :contact_time, class: 'form-control', required: true %>
-          </div-->
+            <!--div class="mb-3">
+              <%= form.label :contact_time, 'Please select the most suitable time for a call or to send a message:' %>
+              <%= form.datetime_select :contact_time, class: 'form-control', required: true %>
+            </div-->
 
-          <div class="mb-3">
-            <%= form.label :contact_method, 'Please choose social media for contact:' %>
-            <%= form.select :contact_method, ['WhatsApp', 'Telegram', 'Phone Call'], {}, {class: 'form-control', required: true} %>
-          </div>
+            <div class="mb-3">
+              <%= form.label :contact_method, 'Please choose social media for contact:' %>
+              <%= form.select :contact_method, ['WhatsApp', 'Telegram', 'Phone Call'], {}, {class: 'form-control', required: true} %>
+            </div>
 
-          <div class="mb-3">
-            <%= form.label :message, 'Please type your message here:' %>
-            <%= form.text_field :message, class: 'form-control', rows: 9, required: true %>
-          </div>
+            <div class="mb-3">
+              <%= form.label :message, 'Please type your message here:' %>
+              <%= form.text_field :message, class: 'form-control', rows: 9, required: true %>
+            </div>
 
-          <div class="modal-footer">
-            <%= form.submit "Send", class: 'btn btn-primary' %>
-          </div>
-        <% end %>
+            <div class="modal-footer">
+              <%= form.submit "Send", class: 'btn contact-send-button' %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

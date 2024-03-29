@@ -9,13 +9,17 @@
   // border : 2px solid black;
   border-radius: 20px;
   box-shadow: 0px 0px 12px 5px rgba(93, 52, 16, 0.31);
+  margin-right:10%;
 
   // background-color: rgb(108, 213, 213) !important;
 }
 .search-box-QandA:hover{
   border:none;
 }
-
+.search-QandA-button ,.search-QandA-button:hover{
+  background-color: $dark-brown;
+  color:$text-white
+}
 .highlighter {
   padding: 5px;
   border-radius: 7px;
@@ -66,8 +70,3 @@
 
 // //////////////modal ////////////////
 
-.add-review-modal-QandA {
-  color:$text-white;
-  background-color: white;
-  display: inline-block;
-}
