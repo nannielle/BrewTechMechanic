@@ -4,10 +4,14 @@
   // left:300px !important;
   z-index: 1;
   width: 100vw;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
-
+@media screen and (max-width: 768px) {
+  .navbar-top {
+    padding-right: 0; /* Change to vertical layout on smaller screens */
+  }
+}
 .navbar-background {
   background-color: $background-beige;
 }
@@ -41,9 +45,11 @@
   background-color: $orange-button;
   border-radius: 20px;
   // padding: 8px 20px;
-  margin-right: 40px;
+  // margin-right: 40px;
   min-width: 60px;
   color:$text-white;
+  border: 2px solid $orange-hover;
+
 }
 
 .nav-button-orange:hover{
@@ -51,7 +57,7 @@
   color:$red-orange !important;
   border-radius: 20px;
   // padding: 8px 20px;
-  margin-right: 40px;
+  // margin-right: 40px;
   min-width: 60px;
 }
 

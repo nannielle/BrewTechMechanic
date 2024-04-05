@@ -1,15 +1,15 @@
 <% transparent_paths = ["/", "/home_after_login"] %>
 <% background =  transparent_paths.include?(request.path) ? "navbar-transparent" : "navbar-background" %>
-<div class="navbar-top <%= background %>">
+<div class="navbar-top    <%= background %>">
 
-  <div class="navbar navbar-expand-sm navbar-dark navbar-style">
+  <div class="navbar navbar-expand navbar-dark navbar-style">
 
       <%= link_to  home_after_login_path	, class: "navbar-brand style-logo" do %>
         <%= image_tag "Rectangle 13(1).png" %>
       <% end %>
 
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav me-auto ">
           <% if user_signed_in?%>
             <li class="nav-item mx-2 ">
                 <%= link_to 'Coffee Machines', coffee_machines_path ,class: "nav-link nav-button-blue" %>
@@ -38,12 +38,17 @@
               </div>
             </li>
            <% else %>
-              <button type="button" class="btn  nav-link nav-item nav-button-orange" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <li class="nav-item mx-2  ">
+              <button type="button" class="btn  nav-link nav-button-orange" data-bs-toggle="modal" data-bs-target="#loginModal">
                 Login
               </button>
-              <button type="button" class="btn nav-link nav-item nav-button-blue" data-bs-toggle="modal" data-bs-target="#signupModal">
+            </li>
+            <li class="nav-item mx-2 ">
+              <button type="button" class="btn nav-link nav-button-blue" data-bs-toggle="modal" data-bs-target="#signupModal">
                 Sign Up
               </button>
+            </li>
+
            <% end %>
         </ul>
       </div>
