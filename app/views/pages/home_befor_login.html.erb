@@ -10,7 +10,7 @@
     <% 4.times do |i| %>
         <div class="" data-slideshow-target="slide" data-index="<%= i %>">
             <%= image_tag "#{image_array[i]}", class: "slide-landingpage" %>
-            <div class="support-text-landingpage"><%= text_array_top[i] %><br> <%= text_array_bottom[i] %></div>
+            <div class="support-text-landingpage mt-5 mt-sm-0 pt-sm-2 pt-5 "><b><%= text_array_top[i] %></b><br> <%= text_array_bottom[i] %></div>
         </div>
       <% end %>
       <div class="button-container-landingpage">

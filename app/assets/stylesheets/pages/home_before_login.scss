@@ -15,12 +15,13 @@
 
 
 .support-text-landingpage {
-  font-size: 55px;
+  font-size: calc(10px + 2.5vw);
   font-weight: 700;
   position: absolute;
   color: $text-white;
   top: 65vh;
   left: 10%;
+  right: 10%;
   line-height: 1.2;
 }
 
