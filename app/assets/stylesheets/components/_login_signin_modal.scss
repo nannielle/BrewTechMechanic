@@ -1,13 +1,34 @@
 .modal-login-background{
   background-color: $background-beige;
 }
-.modal-size-login{
-  width: 150% !important;
-color:$text-white !important;
-margin-left: -20%;
-margin-top: 25vh;
-}
+@media screen and (max-width: 768px) {
+  .modal-login-background {
+    background-color: $background-beige;
+  }
 
+}
+.modal-size-login{
+  margin-top: 35%;
+
+  color:$text-white !important;
+
+}
+.modal-size-signup{
+  margin-top: 25%;
+  color:$text-white !important;
+
+
+}
+@media screen and (min-width: 768px) {
+  .modal-size-login, .modal-size-signup {
+    width: 150% !important;
+    margin-left: -20%;
+  }
+
+  .modal-content{
+    margin-left: -13px;
+  }
+}
 .left-login-modal{
   background-color: $login-modal-bg-left ;
 }
@@ -31,7 +52,7 @@ margin-top: 25vh;
 
 .modal-content{
   background-color: $login-modal-bb-content;
-  margin-left: -13px;
+
   border:none !important;
   border-radius: 0 !important;
 
