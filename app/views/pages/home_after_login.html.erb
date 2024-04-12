@@ -1,88 +1,89 @@
+<div class="hompage-container">
+  <div class="homepage-topimage-container">
+    <%= image_tag "homepage_girl.png", alt:"Homepage Image", class:"homepage-image-top" %>
+    <div data-controller="slideshow" class="homepage-slideshow ">
+      <div class="slideshow-container">
+        <% 7.times do |i| %>
+          <div class="line-and-dot-container">
+            <div class="dot-container">
+              <span class="number-in-dot"><%= i+1 %></span>
+              <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>" ></span>
+            </div>
 
-<div class="homepage-topimage-container">
-  <%= image_tag "homepage_girl.png", alt:"Homepage Image", class:"homepage-image-top" %>
-  <div data-controller="slideshow" class="homepage-slideshow ">
-    <div class="slideshow-container">
-      <% 7.times do |i| %>
-        <div class="line-and-dot-container">
-          <div class="dot-container">
-            <span class="number-in-dot"><%= i+1 %></span>
-            <span class="dot" data-action="click->slideshow#currentSlide" data-slideshow-target="dot" data-slide-index="<%= i %>" ></span>
+            <% if i < 6 %>
+              <div class="line-slideshow"> </div>
+            <% end %>
           </div>
-
-          <% if i < 6 %>
-            <div class="line-slideshow"> </div>
-          <% end %>
-        </div>
-      <% end %>
+        <% end %>
 
         <% text =["Brewing Solutions, Anywhere, Anytime", "Espresso expertise at your service",
                   "Your coffee companion, supporting every sip",
                   "From bean to machine: support that understands", "Wake up to world-class coffee machine service",
                   "Because we care, your coffee never stops", "Global support, local care for your coffee machine"] %>
         <% 7.times do |i| %>
-          <div class="mySlides fade" data-slideshow-target="slide" data-index="<%= i %>">
+          <div class="mySlides fade " data-slideshow-target="slide" data-index="<%= i %>">
             <p class="text-slideshow"><%= "#{text[i]}" %></p>
           </div>
         <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="gray-space">
-  <div class="content row mx-5">
-    <div class="text-container col-md-7">
-      <div class="text-homepage-gray-space">Having trouble with your Coffee Machine?
-        <div style="text-align:center;" class="my-3"><b>We want to help!</b></div>
-        You can read instructions or watch video
       </div>
     </div>
-      <div class="button-container col-md-5">
-        <!--input type="text" placeholder="Error Code" class="mx-2"-->
-        <button class="btn">
-         <%= link_to "Click HERE to find more information", coffee_machines_path, class: "nav-link" %>
+  </div>
+
+  <%# <div class=""> %>
+    <div class="content gray-space row ">
+      <div class="text-container col-12 col-lg-5 ">
+        <div class="text-homepage-gray-space">Having trouble with your Coffee Machine?
+          <div style="text-align:center;" class="my-3"><b>We want to help!</b></div>
+          You can read instructions or watch video
+        </div>
+      </div>
+      <div class="col-lg-2 d-none d-lg-block"></div>
+      <div class="button-container  col-lg-5 col-12">
+        <button class="btn ">
+          <%= link_to "Click HERE to find more information", coffee_machines_path, class: "nav-link" %>
         </button>
       </div>
-  </div>
-</div>
+    </div>
+  <%# </div> %>
 
-<div class="ask-question-space" style="text-align:center;"><p>Do you have a question about coffee or coffee machine?</p>
-  <div class="row mt-5">
-    <div class="col-md-4">
-      <div class="question-card">
-        <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
-          <ul>
-            <li class="mt-5">Can i feel long cups or thermoses in my coffee machine?</li>
-            <li class="mt-2">What temperature is good for tea water?</li>
-          </ul>
+  <div class="ask-question-space" style="text-align:center;"><p>Do you have a question about coffee or coffee machine?</p>
+    <div class="row mt-5">
+      <div class="col-xl-4 col-md-6">
+        <div class="question-card">
+          <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
+            <ul>
+              <li class="mt-5">Can i feel long cups or thermoses in my coffee machine?</li>
+              <li class="mt-2">What temperature is good for tea water?</li>
+            </ul>
+        </div>
       </div>
+
+      <div class="col-xl-4 col-md-6 ">
+        <div class="question-card">
+          <%= image_tag "coffee_icon_1.png", alt: "icon Image", class: "img-fluid mt-4" %>
+            <ul>
+              <li class="mt-5">Do i need a filter for my coffee machine?</li>
+              <li class="mt-2">How many grams of coffee is recommended per cup?</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4  d-block d-md-none d-xl-block">
+        <div class="question-card">
+          <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
+            <ul>
+              <li class="mt-5">What voltage is needed for the coffee machine?</li>
+              <li class="mt-2">What should be the height of the bar counter for barista?</li>
+            </ul>
+        </div>
+      </div>
+
     </div>
 
-    <div class="col-md-4">
-      <div class="question-card">
-        <%= image_tag "coffee_icon_1.png", alt: "icon Image", class: "img-fluid mt-4" %>
-          <ul>
-           <li class="mt-5">Do i need a filter for my coffee machine?</li>
-           <li class="mt-2">How many grams of coffee is recommended per cup?</li>
-          </ul>
-      </div>
+    <div class="button-container my-0 my-lg-5">
+      <button class="btn">
+        <%= link_to "FIND YOUR ANSWERS HERE", question_and_answers_path, class: "nav-link" %>
+      </button>
     </div>
-
-    <div class="col-md-4">
-      <div class="question-card">
-        <%= image_tag "coffee_icon_2.png", alt: "icon Image", class: "img-fluid mt-4" %>
-          <ul>
-            <li class="mt-5">What voltage is needed for the coffee machine?</li>
-            <li class="mt-2">What should be the height of the bar counter for customers and for the barista?</li>
-          </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="button-container ">
-    <button class="btn">
-      <%= link_to "FIND YOUR ANSWERS HERE", question_and_answers_path, class: "nav-link" %>
-    </button>
   </div>
 </div>

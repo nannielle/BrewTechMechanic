@@ -1,27 +1,26 @@
           // Specific CSS for your home-page
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif !important;
   overflow-x: hidden;
   overflow-y: auto;
 }
-
 body::-webkit-scrollbar {
   width: 5px;
 }
-
 body::-webkit-scrollbar-track {
   background: $beige;
 }
-
 body::-webkit-scrollbar-thumb {
   background: $dark-brown;
   border-radius: 5px;
 }
-
 body::-webkit-scrollbar-thumb:hover {
   background:$gold;
+}
+
+.hompage-container{
+  padding: 0 0 20%  0 ;
 }
 .homepage-topimage-container {
   position: relative;
@@ -30,185 +29,201 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 0px;
   margin: 0px;
 }
-
 .homepage-image-top{
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   padding: -10px;
 }
-
 .homepage-slideshow  {
-
 }
-
 .slideshow-container {
   background-color: rgba(219, 101, 16, 0.4) !important;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30%;
-  padding-left: 40px;
-  padding-top: 30px;
+  height: 17.1vw;
+  padding: 2.3vw 2.8vw !important;
+  padding-top: 1.9vw;
   color : $text-white;
   backdrop-filter: blur(15px);
 }
-
-
 .mySlides {
-  transition: opacity 1.0s ease;
+  transition: opacity 2.0s ease;
 }
-
 .fade {
   animation-name: fade;
-  animation-duration: 1.0s;
+  animation-duration: 2.0s;
   animation-fill-mode: forwards;
 }
-
 @keyframes fade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-
 .text-slideshow {
   color:$text-white;
-  font-size: 15px;
-  padding: 8px 12px;
+  font-size: 3.1vw;
   position: absolute;
-  width: 100%;
+  padding: 0.2vw 0.5vw;
+  width: 97%;
 }
-
-.mySlides  div {
-  top:140px !important;
-  font-size: 20px;
-}
-
-.mySlides p {
-  font-size: 45px;
-}
-
 .numbertext {
   color:$text-white;
-  font-size: 12px;
+  font-size: 1.2vw;
   padding: 8px 12px;
   position: absolute;
   top: 0;
 }
-
 .line-and-dot-container{
   display: inline-flex;
   align-items: center;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 1.8vw;
 }
-
 .dot-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 5px;
+  margin-left: 0.1vw;
+  margin-right: 0.4vw;
   cursor: pointer;
   flex-direction: row;
 }
-
 .dot {
-  height: 40px;
-  width: 40px;
-  margin: 0 2px;
+  height: 2.8vw;
+  width: 2.8vw;
   background-color: transparent;
   border-radius: 50%;
-  border: 5px solid $text-white;
+  border: 0.4vw solid $text-white;
   display: inline-block;
   transition: background-color 0.6s ease;
   position: relative;
   text-align: center;
   justify-content: center;
 }
-
 .number-in-dot{
   position: absolute;
 }
-
 .active {
   background-color: $orange-button;
   border:none;
 }
-
 .dot:hover{
  background-color: $orange-button;
  opacity: 0.5;
  border: none;
 }
-
 .line-slideshow{
-  width: 50px;
+  width: 4vw;
   background-color: $text-white;
-  height: 7px;
+  height: 0.5vw;
   border-radius: 5px;
 }
+@media screen and (max-width : 860px){
+  .slideshow-container{
+    height: 25vw;
+    padding: 3vw 2.8vw !important;
+  }
+  .text-slideshow {
+    font-size: 4.2vw;
+    padding: 0.3vw 1vw;
+  }
+  .numbertext {
+    font-size: 1.4vw;
+    padding: 8px 12px;
+  }
+  .line-and-dot-container{
+    margin-top: 3.6vw;
+  }
+  .dot-container{
+    margin-right: 0.8vw;
+  }
+
+  .dot {
+    height: 5.8vw;
+    width: 5.8vw;
+    margin: 0 0.5vw;
+    border: 0.6vw solid $text-white;
+  }
+  .line-slideshow{
+    width:5vw;
+    height: 0.8vw;
+  }
+  .active {
+    background-color: $orange-button;
+    border:none;
+  }
+
+}
+
 
 .gray-space {
-  flex: 1;
   background-color: $beige ;
-  height: 42vh;
-}
+  font-weight: 700;
 
+
+}
 .content {
-  display: flex;
-  flex-direction: row;
-  height: 60%; /* Set height to 60% of viewport height */
-}
-
-.text-container {
-  flex: 1; /* Take half of the space */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10vh;
+  padding: 5%;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
 }
 
 .text-homepage-gray-space {
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: $dark-brown !important;
 }
 
 .button-container {
-  flex: 1; /* Take half of the space */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:5%;
-  font-size: 25px ;
 }
-
 .button-container button {
   max-height: 100%;
   max-width: 100%;
   background-color:$orange-button ;
   border-radius: 20px;
-  font-size: 25px ;
+  font-size: 2vw ;
+  // height: 5vw;
+  // min-height: 40px;
 }
-
 .button-container button:hover{
   background-color: $orange-hover !important;
 }
-
-.button-container input{
-  padding:5px;
-  border-radius: 5px;
-  background-color:$beige !important;
-  border: 2px $orange-button solid;
-  outline: none;
-  color:$dark-brown;
+@media screen and (max-width : 991px){
+  .text-homepage-gray-space{
+    font-size: 3vw ;
+  }
+  .button-container button{
+    font-size: 3vw ;
+    margin-top: 10%;
+    margin-bottom: 8%;
+  }
 }
 
-.button-container input::placeholder {
-  color: $dark-brown;
-}
+// @media screen and (max-width : 860px){
+//   .text-homepage-gray-space{
+//     font-size: 4vw ;
+
+//   }
+//   .button-container button{
+//     font-size: 4vw ;
+
+//   }
+// }
+
 
 .ask-question-space {
   flex: 1; /* Take remaining space */
