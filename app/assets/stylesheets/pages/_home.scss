@@ -35,8 +35,7 @@ body::-webkit-scrollbar-thumb:hover {
   object-fit: cover;
   padding: -10px;
 }
-.homepage-slideshow  {
-}
+
 .slideshow-container {
   background-color: rgba(219, 101, 16, 0.4) !important;
   position: absolute;
@@ -131,7 +130,7 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 0.3vw 1vw;
   }
   .numbertext {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     padding: 8px 12px;
   }
   .line-and-dot-container{
@@ -158,12 +157,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 }
 
-
 .gray-space {
   background-color: $beige ;
   font-weight: 700;
-
-
 }
 .content {
   display: flex;
@@ -196,8 +192,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-color:$orange-button ;
   border-radius: 20px;
   font-size: 2vw ;
-  // height: 5vw;
-  // min-height: 40px;
+
 }
 .button-container button:hover{
   background-color: $orange-hover !important;
@@ -212,17 +207,6 @@ body::-webkit-scrollbar-thumb:hover {
     margin-bottom: 8%;
   }
 }
-
-// @media screen and (max-width : 860px){
-//   .text-homepage-gray-space{
-//     font-size: 4vw ;
-
-//   }
-//   .button-container button{
-//     font-size: 4vw ;
-
-//   }
-// }
 
 
 .ask-question-space {
@@ -253,4 +237,32 @@ body::-webkit-scrollbar-thumb:hover {
   width: 200px;
   height: 200px;
   border-radius: 5px;
+}
+
+
+
+.button-orange{
+  background-color: $orange-button;
+  border-radius: 20px;
+  min-width: 60px;
+  color:$text-white;
+  border: 2px solid $orange-hover;
+}
+.button-orange:hover{
+  background-color: $orange-hover !important;
+  color:$red-orange !important;
+  border-radius: 20px;
+  min-width: 60px;
+}
+.button-brown{
+  background-color: $text-white;
+  border-radius: 20px;
+  border: 2px solid $dark-brown;
+  color: $dark-brown !important;
+}
+.button-brown:hover{
+  background-color: $dark-brown;
+  color: $text-white !important;
+  border-radius: 20px;
+  min-width: 60px;
 }
