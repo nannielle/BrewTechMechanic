@@ -4,7 +4,7 @@
   <h2 class="mx-5" style="text-align:center;">My Coffee Machines:</h2>
 
   <div class="text-center mt-4">
-    <button class="btn nav-button-orange" data-action="click->toggle#change">Add a new coffee machine</button>
+    <button class="btn button-orange" data-action="click->toggle#change">Add a new coffee machine</button>
   </div>
 
 
@@ -16,7 +16,7 @@
         <%= f.input :serial_number %>
         <%= f.association :manager %>
         <%= f.association :coffee_machine, label_method: lambda { |coffee_machine| "#{coffee_machine.coffee_machine_model.name}" } %>
-        <%= f.submit "Add coffee machine" ,class:"btn nav-button-blue"%>
+        <%= f.submit "Add coffee machine" ,class:"btn button-brown"%>
       <% end %>
       </div>
     </div>

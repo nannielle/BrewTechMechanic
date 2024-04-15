@@ -1,14 +1,12 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "stimulus";
 
-// Connects to data-controller="modal"
 export default class extends Controller {
-  static targets = [ "modal" ]
-
-  open() {
-    this.modalTarget.style.display = 'block';
+  connect(){
+console.log("salam");
   }
-
-  close() {
-    this.modalTarget.style.display = 'none';
+  toggleMenu() {
+    const navbarMenu = this.element.querySelector('.navbar-menu');
+    navbarMenu.classList.toggle('show');
+    console.log("salam");
   }
 }
