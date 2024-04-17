@@ -3,7 +3,7 @@
   <button class="btn cofeenachine-button-blue dropdown-toggle my-2 " type="button" id="detailsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
       View details
   </button>
-    <ul class="dropdown-menu details-cofeemachine-drowpdown" aria-labelledby="detailsDropdown">
+    <ul class="dropdown-menu details-cofeemachine-drowpdown " aria-labelledby="detailsDropdown">
       <div class="p-4 coffeemachine-card-border">
         <li><b> <%= coffee_machine.machine_type %></b></li>
         <li><%= coffee_machine.description %></li>
@@ -13,7 +13,7 @@
   <button class="btn cofeenachine-button-orange dropdown-toggle" type="button" id="errorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
     Choose Error
   </button>
-    <ul class="dropdown-menu" aria-labelledby="errorDropdown">
+    <ul class="dropdown-menu error-cofeemachine-drowpdown" aria-labelledby="errorDropdown">
         <% @allerrors.each do |error| %>
           <% if error.coffee_machine_model_id == coffee_machine.coffee_machine_model_id %>
             <li><%= link_to error.error_code, error_message_path(error), class:"dropdown-item" %></li>

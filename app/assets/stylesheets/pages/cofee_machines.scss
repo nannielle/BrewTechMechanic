@@ -58,6 +58,19 @@
   padding: 0.5vw;
 
 }
+.error-cofeemachine-drowpdown{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: $orange-button;
+  border-radius: 10px;
+}
+
+.error-cofeemachine-drowpdown .dropdown-item:hover{
+  background-color: $orange-hover;
+}
+.error-cofeemachine-drowpdown .dropdown-item{
+  color: $text-white;
+}
+
 
 .coffeemachine-card-border{
  border:2px solid $dark-brown;
@@ -80,6 +93,10 @@
   .card-body-coffeemachine h4{
     font-size: 1.2vw !important;
     font-weight: 1000;
+  }
+  .error-cofeemachine-drowpdown{
+    font-size: 1.3vw !important;
+
   }
 
   .cofeenachine-button-orange, .cofeenachine-button-orange:hover{
@@ -110,7 +127,10 @@
   .cofeenachine-button-orange, .cofeenachine-button-orange:hover{
     font-size: 1.5vw;
   }
+  .error-cofeemachine-drowpdown{
+    font-size: 1.7vw !important;
 
+  }
   .cofeenachine-button-blue, .cofeenachine-button-blue:hover{
     font-size: 1.5vw;
   }
@@ -120,7 +140,7 @@
     padding: 22% 0;
   }
   .coffee-machine-title h2{
-    font-size: 3vw;
+    font-size: 3.2vw;
     color:$dark-brown;
   }
 
@@ -132,7 +152,10 @@
   .cofeenachine-button-orange, .cofeenachine-button-orange:hover{
     font-size: 2.7vw;
   }
+  .error-cofeemachine-drowpdown{
+    font-size: 3vw !important;
 
+  }
   .cofeenachine-button-blue, .cofeenachine-button-blue:hover{
     font-size: 2.7vw;
   }
