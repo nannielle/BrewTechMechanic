@@ -1,68 +1,53 @@
-body{
-  font-family: "Nunito" !important;
-}
+
 
 .coffeemachines-container{
   background-color: $background-beige;
-  padding-top: 10%;
+
 }
 
 .image-coffeemachines-container{
-  // height: 80%;
   mix-blend-mode: multiply;
   border: none;
-  margin-top:-15%;
-  margin-bottom: 10%;
-  min-height: 15vw;
-  min-width: 15vw;
+
+  min-height: 120px;
+  min-width: 120px;
 }
 
 .image-coffeemachines{
   object-fit: cover;
-  // margin-top: -10%;
-  min-height: 8vw;
-  min-width: 8vw;
-}
 
-.test{
-  border: 2px solid black;
 }
 
 .coffee-machine-card {
-  // border:2px solid black;
   box-shadow: 0px 0px 12px 5px rgba(93, 52, 16, 0.31);
   border-radius: 20px;
 
 }
 
 .card-body-coffeemachine h4{
-  font-size: 1.5vw;
 
 }
 .card-body-coffeemachine{
-  margin-left: 8%;
-  padding-left: 12%;
-  padding-top: 18%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
-.cofeenachine-button-orange , .cofeenachine-button-orange:hover{// here name of the buttons are weird
+.cofeenachine-button-orange, .cofeenachine-button-orange:hover{
   background-color: $orange-button;
   border-radius: 20px;
-  // padding: 8px 20px;
-  margin-right: 40px;
+
   min-width: 60px;
   color:$text-white;
-  font-size: 1vw;
 }
 
-.cofeenachine-button-blue,.cofeenachine-button-blue:hover{
+.cofeenachine-button-blue, .cofeenachine-button-blue:hover{
   background-color: $background-beige;
   border-radius: 20px;
   border: 2px solid $dark-brown;
   color: $dark-brown !important;
-  // padding: 8px 20px;
-  font-size: 1vw;
 
 }
 .details-cofeemachine-drowpdown{
@@ -77,4 +62,78 @@ body{
 .coffeemachine-card-border{
  border:2px solid $dark-brown;
  border-radius: 10px;
+}
+
+
+@media screen and (min-width : 1200px){
+  .coffeemachines-container{
+    padding: 8% 0;
+  }
+  .coffee-machine-title h2{
+    font-size: 3vw;
+    color:$dark-brown;
+  }
+  .image-coffeemachines-container{
+    min-height: 150px !important;
+    min-width: 150px !important;
+  }
+  .card-body-coffeemachine h4{
+    font-size: 1.2vw !important;
+    font-weight: 1000;
+  }
+
+  .cofeenachine-button-orange, .cofeenachine-button-orange:hover{
+    font-size: 0.9vw !important;
+  }
+
+  .cofeenachine-button-blue, .cofeenachine-button-blue:hover{
+    font-size: 0.9vw !important;
+  }
+}
+@media screen and (min-width : 768px){
+  .coffeemachines-container{
+    padding: 12% 0;
+  }
+  .coffee-machine-title h2{
+    font-size: 3vw;
+    color:$dark-brown;
+  }
+  .image-coffeemachines-container{
+    min-height: 130px;
+    min-width: 130px;
+  }
+  .card-body-coffeemachine h4{
+    font-size: 1.7vw;
+    font-weight: 1000;
+  }
+
+  .cofeenachine-button-orange, .cofeenachine-button-orange:hover{
+    font-size: 1.5vw;
+  }
+
+  .cofeenachine-button-blue, .cofeenachine-button-blue:hover{
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width : 767px){
+  .coffeemachines-container{
+    padding: 22% 0;
+  }
+  .coffee-machine-title h2{
+    font-size: 3vw;
+    color:$dark-brown;
+  }
+
+  .card-body-coffeemachine h4{
+    font-size: 3.2vw;
+    font-weight: 1000;
+  }
+
+  .cofeenachine-button-orange, .cofeenachine-button-orange:hover{
+    font-size: 2.7vw;
+  }
+
+  .cofeenachine-button-blue, .cofeenachine-button-blue:hover{
+    font-size: 2.7vw;
+  }
 }

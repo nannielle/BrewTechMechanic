@@ -1,5 +1,5 @@
 <div class="coffeemachines-container">
-<div class="coffee-machine text-center">
+<div class="coffee-machine-title text-center mb-3">
   <h2>Here you can see all information about our Coffee Machines:</h2>
 </div>
   <div class="row">
@@ -7,18 +7,18 @@
     <div class="col-10 ">
       <div class="row ">
         <% @coffee_machines.each do |coffee_machine|  %>
-          <div class="col-lg-4 mt-4 ">
+          <div class="col-md-6 col-12 col-xl-4 mt-4">
           <div class="row coffee-machine-card mx-2">
-            <div class="col-5 mt-5">
+            <div class="  col-6 ">
               <div class="card image-coffeemachines-container ">
                 <% if coffee_machine.photo.attached? %>
-                  <%= cl_image_tag coffee_machine.photo.key, class: "image-coffeemachines ", crop: :fill %>
+                  <%= cl_image_tag coffee_machine.photo.key, class: "image-coffeemachines card-img", crop: :fill %>
                 <% end %>
               </div>
             </div>
-            <div class="col-6 card-body mt-2 card-body-coffeemachine">
-              <h4 class="card-text "><%= coffee_machine.coffee_machine_model.name %></h4>
-              <div class="errorchoose-coffeemachine">
+            <div class="col-5   card-body-coffeemachine my-3 ">
+              <h4 class="card-title "><%= coffee_machine.coffee_machine_model.name %></h4>
+              <div class="errorchoose-coffeemachine card-text ">
 
                  <%= render "shared/drowpdowns", coffee_machine:coffee_machine %>
 
@@ -29,6 +29,6 @@
          <% end %>
         </div>
       </div>
-    <div class="col-2"></div>
+    <div class="col-1"></div>
   </div>
 </div>

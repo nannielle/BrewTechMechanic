@@ -1,18 +1,18 @@
-  <div class="dropdown">
+  <div class="dropdown card-text">
 
-  <button class="btn cofeenachine-button-blue dropdown-toggle mb-2" type="button" id="detailsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn cofeenachine-button-blue dropdown-toggle my-2 " type="button" id="detailsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
       View details
-    </button>
+  </button>
     <ul class="dropdown-menu details-cofeemachine-drowpdown" aria-labelledby="detailsDropdown">
-    <div class="p-4 coffeemachine-card-border">
-     <li><b> <%= coffee_machine.machine_type %></b></li>
-     <li><%= coffee_machine.description %></li>
-    </div>
+      <div class="p-4 coffeemachine-card-border">
+        <li><b> <%= coffee_machine.machine_type %></b></li>
+        <li><%= coffee_machine.description %></li>
+      </div>
     </ul>
 
-    <button class="btn cofeenachine-button-orange dropdown-toggle" type="button" id="errorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      Choose Error
-    </button>
+  <button class="btn cofeenachine-button-orange dropdown-toggle" type="button" id="errorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    Choose Error
+  </button>
     <ul class="dropdown-menu" aria-labelledby="errorDropdown">
         <% @allerrors.each do |error| %>
           <% if error.coffee_machine_model_id == coffee_machine.coffee_machine_model_id %>
@@ -20,15 +20,5 @@
           <% end %>
         <% end %>
     </ul>
-
-
-
-
-
-
-
-
-
-
 
  </div>
