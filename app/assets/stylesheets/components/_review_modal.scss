@@ -1,50 +1,59 @@
 .modal-review-background{
   background-color: $dark-brown !important;
 }
+.modal-size-review{
+}
 
 .modal-review-container{
   background-color : $background-beige !important;
   color: black;
   border-radius: 20px !important;
-  margin-left: -10vw;
-
-  width: 150% !important;
+  padding-bottom: 40px;
 }
 
 .modal-review-eachreview{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   padding :3%;
   border-radius: 20px;
-
 }
-// .name-review-modal{
-
-// }
 
 .add-review-modal-QandA{
   max-height: 45px;
   margin-left: 5% ;
-
 }
 .add-review-modal-QandA {
-  color:$text-white;
-  background-color: white;
-  display: inline-block;
-  border-radius: 30px;
-  width:90%;
+  position:relative;
+
 }
 .add-review-modal-button ,.add-review-modal-button:hover{
   background-color: $dark-brown;
   color:$text-white;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px ;
   border-top-right-radius: 20px;
+  position: absolute;
+  right: 5%;
+  height: 45px;
+  border:none ;
 }
-.input-review-modal{
+.input-review-modal ,.input-review-modal:active{
   height: 20px;
-  width: 400px;
   color:white;
-  margin-top:-8px;
-  margin-left: 10px;
   border:none ;
   overflow: hidden;
+  background-color: white !important;
+  position: absolute;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  width:71%;
+  height: 45px;
+  }
+
+  @media (max-width:572px){
+    .modal-size-review{
+      font-size: 14px;
+
+    }
+  .add-review-modal-button{
+    width:30%;
+  }
   }
