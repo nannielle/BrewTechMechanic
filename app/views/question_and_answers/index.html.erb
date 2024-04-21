@@ -1,8 +1,10 @@
+<div class="container-lg ">
 <div class="QandA-container">
-  <h1 style="text-align:center;">Here you can find answers to the most common questions:</h1>
-
+  <div class="QandA-title">
+    <h2 style="text-align:center;">Common Questions Answered: Find Solutions Here</h1>
+  </div>
   <div class="row justify-content-center ">
-    <div class="col-sm-4 mt-5 ">
+    <div class="col-lg-4 col-md-6 col-10 mt-3 mt-md-5 ">
       <%= form_with url: question_and_answers_path, method: :get, class: "d-flex search-box-QandA " do %>
         <%= text_field_tag :query,
               params[:query],
@@ -21,23 +23,31 @@
         <p > nothing found with <b>"<%= params[:query] %>"</b></p>
       </div>
     <% else %>
-      <ul>
+      <div>
         <% @questions.each do |question| %>
           <%= render "shared/revews_modal", question: question %>
 
 
-            <div class="row question-answer-QandA">
-              <div class="col-2"></div>
-              <div class="col-3 question-QandA">
+            <div class="row question-answer-QandA mt-md-2 mt-5 mx-1">
+              <%# <div class="col-md-1 col-0"></div> %>
+              <div class="col-md-5 col-12 question-QandA">
 
                 <h3><%= highlight(question.question, params[:query],highlighter: '<em class="highlighter">\1</em>') %></h3>
 
               </div>
-              <div class="col-1 line-container-QandA">
+              <div class="px-5 d-block d-md-none">
+                  <hr />
+              </div>
+
+              <div class=" col-md-2  line-container-QandA d-none d-md-block">
                 <div class="qa-line-QandA"></div>
                 <i class="fa-solid fa-hammer icon-qa-QandA"></i>
               </div>
-              <div class="col-3 answer-QandA">
+                <div class="d-md-none d-block">
+                <i class="fa-solid fa-hammer icon-qa-QandA"></i>
+              </div>
+              <div class="col-md-5 col-12 answer-QandA">
+
               <p><%= highlight(question.answer, params[:query],highlighter: '<em  class="highlighter">\1</em>') %></p>
 
                 <div class=" reply-icon-QandA text-center">
@@ -48,7 +58,7 @@
           </div>
 
         <% end %>
-    </ul>
+    </div>
 
     <% end %>
   </div>
