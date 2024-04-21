@@ -1,26 +1,29 @@
 <div class="modal fade modal-review-background" id="reviewModal<%= question.id%>" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog ">
+  <div class="modal-dialog modal-size-review">
     <div class="modal-size ">
 
-      <div class="">
-        <div class="modal-content   modal-review-container p-5 ">
 
-        
-          <% question.reviews.each do |review| %>
-          <div class="modal-review-eachreview m-2">
-            <p  style="font-size:24px;"><b class="name-review-modal"><%= review.user.first_name ? review.user.first_name : "no name" %></b> : <%= review.content %></p>
+        <div class="modal-content   modal-review-container">
+          <div class="modal-header ">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <% end %>
-          <div class="">
-            <%= simple_form_for [question, Review.new] do |f| %>
-              <div class="d-flex add-review-modal-QandA mt-5">
-                <%= f.input :content,  input_html: { class: "form-control mr-2 input-review-modal" } ,label:false %>
-                <%= f.submit "Add a review" , class: "btn add-review-modal-button  ms-auto" %></div>
-              </div>
+          <div class=" p-sm-4  ">
+            <% question.reviews.each do |review| %>
+            <div class="modal-review-eachreview m-3">
+              <p><b class="name-review-modal"><%= review.user.first_name ? review.user.first_name : "no name" %></b> : <%= review.content %></p>
+            </div>
             <% end %>
-          </div>
+            <div class="">
+              <%= simple_form_for [question, Review.new] do |f| %>
+                <div class="d-flex add-review-modal-QandA mt-5">
+                  <%= f.input :content,  input_html: { class: " form-control input-review-modal" } ,label:false %>
+                  <%= f.submit "Add a review" , class: "add-review-modal-button" %>
+                </div>
+              <% end %>
+            </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
