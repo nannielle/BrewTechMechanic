@@ -10,10 +10,6 @@
 
 }
 
-// .image-my-coffeemachines{
-
-
-// }
 
 .my-coffeemachine{
   padding-top: 10%;
@@ -57,4 +53,9 @@ cursor: pointer;
 }
 .description-all > span:hover{
 cursor: pointer;
+}
+@media (max-width:800px) {
+  .my-coffeemachine h2{
+    margin-top: 12%;
+  }
 }
