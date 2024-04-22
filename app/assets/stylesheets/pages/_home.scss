@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   font-family: "Nunito" !important;
+  background-color: $background-beige;
 }
 body::-webkit-scrollbar {
   width: 5px;

@@ -192,26 +192,26 @@
 .navbar-style .navbar-brand img {
   width: 140px;
 }
-.nav-button-orange{
+.nav-button-orange ,.nav-landingpage-button-orange{
   background-color: $orange-button;
   border-radius: 20px;
   min-width: 60px;
   color:$text-white;
   border: 2px solid $orange-hover;
 }
-.nav-button-orange:hover{
+.nav-button-orange:hover ,.nav-landingpage-button-orange:hover{
   background-color: $orange-hover ;
   color:$red-orange !important;
   border-radius: 20px;
   min-width: 60px;
 }
-.nav-button-blue{
+.nav-button-blue , .nav-landingpage-button-blue{
   background-color: $text-white;
   border-radius: 20px;
   border: 2px solid $dark-brown;
   color: $dark-brown !important;
 }
-.nav-button-blue:hover{
+.nav-button-blue:hover , .nav-landingpage-button-blue:hover{
   background-color: $dark-brown;
   color: $text-white !important;
   border-radius: 20px;
@@ -230,4 +230,12 @@
     background-color: $orange-hover;
   }
 
+}
+
+@media (max-width:425px){
+  .navbar-top {
+
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }

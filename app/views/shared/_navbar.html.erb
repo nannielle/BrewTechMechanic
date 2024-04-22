@@ -1,6 +1,6 @@
 <% transparent_paths = ["/", "/home_after_login"] %>
 <% background =  transparent_paths.include?(request.path) ? "navbar-transparent" : "navbar-background" %>
-<div class="navbar-top    <%= background %>">
+<div class="navbar-top   <%= background %>">
   <div class="navbar navbar-expand navbar-dark navbar-style">
 
     <%= link_to  home_after_login_path	, class: "navbar-brand style-logo" do %>
@@ -18,7 +18,7 @@
           </label>
           <ul class="menu-box">
             <li class="nav-item mx-2 d-lg-none ">
-              <%= link_to "home", home_after_login_path, class: "nav-link nav-button-blue", data: { bs_toggle: "modal", bs_target: "#contactModal" } %>
+              <%= link_to "home", home_after_login_path, class: "nav-link nav-button-blue"%>
             </li>
 
             <li class="nav-item mx-2 ">
@@ -50,12 +50,12 @@
         <% else %>
 
           <li class="nav-item mx-2  ">
-            <button type="button" class="btn  nav-link nav-button-orange" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <button type="button" class="btn  nav-link nav-landingpage-button-orange" data-bs-toggle="modal" data-bs-target="#loginModal">
               Login
             </button>
           </li>
           <li class="nav-item mx-2 ">
-            <button type="button" class="btn nav-link nav-button-blue" data-bs-toggle="modal" data-bs-target="#signupModal">
+            <button type="button" class="btn nav-link nav-landingpage-button-blue" data-bs-toggle="modal" data-bs-target="#signupModal">
               Sign Up
             </button>
           </li>
