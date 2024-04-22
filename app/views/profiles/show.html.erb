@@ -1,6 +1,7 @@
-<div class="card-profile-container">
-
-    <div class="col-lg-6 mt-1 center">
+<div class="container ">
+  <div class="row">
+    <%# <div class="col-3"></div> %>
+    <div class=" mt-1  ">
       <div class="profile-container">
         <h2>Your profile:</h2>
         <p><i class="fa-solid fa-user"></i>  Name:  <%= "#{@user.first_name} #{@user.last_name}"%></p>
@@ -11,4 +12,7 @@
         <i class="fa-solid fa-pen-to-square"></i> <%= link_to 'Edit Profile', edit_profile_path %>
       </div>
     </div>
+    <%# <div class="col-3"></div> %>
+
+  </div>
 </div>

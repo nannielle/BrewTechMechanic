@@ -26,7 +26,7 @@
     <% @user_coffeemachines.in_groups_of(3, false).each_with_index do |group ,index2| %>
       <div class="row">
         <% group.compact.each_with_index do |coffee_machine , index| %>
-          <div class="col-md-4 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4">
             <div class="card my-coffeemachine-card">
               <div class="image-my-coffeemachines-container">
                   <% if coffee_machine.photo.attached? %>
