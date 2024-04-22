@@ -1,12 +1,8 @@
 .modal-login-background{
-  background-color: $background-beige;
+  background-color:$nav-toggle-burger ;
 }
-@media screen and (max-width: 768px) {
-  .modal-login-background {
-    background-color: $background-beige;
-  }
 
-}
+
 .modal-size-login{
   margin-top: 35%;
 

@@ -1,5 +1,6 @@
-
+<div class="container justify-content-center">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="form-inputs form-floating mb-3">
     <%= f.input :email,
                 required: false,
@@ -17,5 +18,6 @@
     <%= f.button :submit, "Log in" ,class:"submit-button"%>
   </div>
 <% end %>
+</div>
 
-<%# <%= render "devise/shared/links" %> 
+<%# <%= render "devise/shared/links"%> 

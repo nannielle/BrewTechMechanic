@@ -36,7 +36,7 @@
               <div class="card-body my-cofeemachine">
                 <h5 class="card-title">Model:  <%= coffee_machine.coffee_machine_model.name %></h5>
                 <p class="card-subtitle mb-2 text-muted" >Type of coffee machine: <%= coffee_machine.machine_type %></p>
-                <p class="card-text description-truncuate" data-coffeemachine-target="readMore" >Description: <%= truncate(coffee_machine.description , length:60) %><span  data-action="click->coffeemachine#fire" data-coffeemachine-target="<%= index2 * 3 + index %>">reed more</span></p>
+                <p class="card-text description-truncuate" data-coffeemachine-target="readMore" >Description: <%= truncate(coffee_machine.description , length:79) %><span  data-action="click->coffeemachine#fire" data-coffeemachine-target="<%= index2 * 3 + index %>">reed more</span></p>
                 <p class="card-text description-all" data-coffeemachine-target="description">Description: <%= coffee_machine.description %><span  data-action="click->coffeemachine#unfire" data-coffeemachine-target="<%= index2 * 3 + index %>"> reed less</span></p>
               </div>
 
