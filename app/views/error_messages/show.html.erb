@@ -1,10 +1,10 @@
 
-<div class=" mt-5 error-container">
-  <div class="row error-show-card">
+<div class=" mt-5 error-container container">
+  <div class="row error-show-card mx-1 mx-sm-0">
     <h2>Error Code: <%= @error.error_code %></h2>
-    <h2 class="mb-5"><%= @error.error_name %></h2>
-    <iframe class="col-7" width="600" height="400" src="<%= @error.youtubelink .sub! '/watch?v=', '/embed/' %>" frameborder="0" allowfullscreen></iframe>
+    <h2 class="mb-5 "><%= @error.error_name %></h2>
+    <iframe class="col-md-7"   src="<%= @error.youtubelink .sub! '/watch?v=', '/embed/' %>" frameborder="0" allowfullscreen></iframe>
 
-    <h4 class="col-5 p-4"><b> Please do following:</b> <%= @error.textdescription %></h4>
+    <h4 class="col-md-5 p-4"><b> Please do following:</b> <%= @error.textdescription %></h4>
   </div>
 </div>

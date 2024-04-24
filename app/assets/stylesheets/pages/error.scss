@@ -1,12 +1,15 @@
 .error-container{
   background-color: $background-beige;
-  min-height: 100vw;
-  padding: 15vw;
-  padding-top: 6vw;
+  // min-height: 100vw;
+  padding-top:10vh;
+  min-height:500px;
 
 }
 .error-show-card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 padding: 3vw;
 border-radius: 20px;
+}
+.error-show-card iframe{
+  height:calc(200px + 12vw);
 }

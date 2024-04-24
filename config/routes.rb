@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'profiles/edit'
   get 'profiles/update'
   devise_for :users
+  
   root to: "pages#home_befor_login"
 
   get "/home_after_login" ,to: "pages#home_after_login", as: :home_after_login
